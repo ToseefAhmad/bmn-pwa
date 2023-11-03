@@ -1,0 +1,95 @@
+@import (reference) '../../../../../web/theme';
+@arrowColor: var(--arrow-button-color, @color__primary);
+
+.customProjectsWrapper {
+  width: 100%; // @venia-update: Change this value when page width is clear for cms pages in project scope.
+  margin: auto;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: 5px 10px 25px -15px rgba(0,0,0,.3), 0 10px 25px -10px rgba(0,0,0,.2);
+  border: 1px solid hsla(15,6%,74%,.5);
+  transition: transform .8s cubic-bezier(.23,1,.32,1),box-shadow .8s cubic-bezier(.23,1,.32,1);
+  color: @color__black;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 5px 30px 45px -25px rgba(0,0,0,.4), 0 30px 45px -20px rgba(0,0,0,.3)
+  }
+}
+
+.customProjectsImage {
+  width: 100%;
+  margin-bottom: 0;
+  height: 235px;
+  background-size: cover;
+  background-position: 50%;
+}
+
+.customProjectsContent {
+  top: 85%;
+  left: 200px;
+  min-width: 300px;
+  position: absolute;
+  width: 50%;
+  box-sizing: border-box;
+  padding: 20px;
+  z-index: 0;
+  background: #fff;
+  box-shadow: 5px 10px 25px -15px rgba(0,0,0,.3), 0 10px 25px -10px rgba(0,0,0,.2);
+  border: 1px solid hsla(15,6%,74%,.5);
+  transition: transform .8s cubic-bezier(.23,1,.32,1),box-shadow .8s cubic-bezier(.23,1,.32,1);
+
+  [class="projects-title"] {
+    .font-size(@font-size__xl);
+    font-weight: @font-weight__bold;
+  }
+
+  [class="projects-subtext"] {
+    .font-size(@font-size__s);
+  }
+
+  [data-element="arrow"] {
+    position: absolute;
+    right: @indent__base;
+
+    [class*="projects-arrow"] {
+      background-color: @arrowColor;
+      .icon('pagebuilder-arrow-right', 37.5px, 24px);
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 0;
+        border-left: 18.75px solid transparent;
+        border-right: 18.75px solid transparent;
+      }
+
+      &::before {
+        bottom: 100%;
+        border-bottom: 8px solid @arrowColor;
+      }
+
+      &::after {
+        top: 24px;
+        border-top: 8px solid @arrowColor;
+      }
+    }
+  }
+}
+
+@media @desktopL {
+  .customProjectsImage {
+    height: 700px;
+  }
+}
+
+@media @mobileL {
+  .customProjectsContent {
+    position: unset;
+    width: 100%;
+    min-width: auto;
+  }
+}

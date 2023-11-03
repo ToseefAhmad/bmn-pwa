@@ -1,0 +1,38 @@
+.sl__filterHead {
+  display: block;
+  background: #FF5700;
+  padding: 15px;
+  color: #ffffff;
+}
+
+.sl__filterHead > span {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.sl__filterHead button {
+  color: #ffffff;
+  margin: 10px 0 0 auto;
+}
+
+.sl__filterHead button:hover {
+  text-decoration: underline;
+}
+
+.sl__filterResults {
+  display: block;
+  border: solid #ebebeb;
+  border-width: 0 1px 1px 1px;
+}
+
+@media only screen and (min-width: 768px) {
+  .sl__filter {
+    width: 40%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .sl__filter {
+    width: 100%;
+  }
+}

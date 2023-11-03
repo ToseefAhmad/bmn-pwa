@@ -1,0 +1,24 @@
+@import (reference) '../../web/theme';
+
+.circleButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: @indent__xl;
+  height: @indent__xl;
+  padding: @indent__xs;
+  margin: @indent__xs 0 0;
+  border-radius: percentage(1/2);
+  box-shadow: @box-shadow__default;
+  background-color: @color__white;
+  cursor: pointer;
+  box-sizing: border-box;
+
+  > a,
+  > div {
+    display: flex;
+    align-items: center;
+    align-self: center;
+  }
+}

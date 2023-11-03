@@ -1,0 +1,20 @@
+mutation createRequisitionList($input: CreateRequisitionListInput!) {
+  createRequisitionList(input: $input) {
+    requisition_list {
+      uid
+      name
+      description
+      items {
+        __typename
+        items {
+          uid
+          product {
+            sku
+          }
+        }
+      }
+      items_count
+      updated_at
+    }
+  }
+}

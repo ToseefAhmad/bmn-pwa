@@ -1,0 +1,174 @@
+@import (reference) '../../web/theme';
+
+.priceWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.priceWrapperFinalPrice,
+.priceWrapperComplexPrice,
+.priceWrapperDirectPrice,
+.priceWrapperTierPrice,
+.priceRowWrapper {
+  display: flex;
+
+  .suffix {
+    .font-size(@price__info--font-size);
+    align-self: flex-start;
+    font-weight: @font-weight__regular;
+    text-transform: lowercase;
+    padding-left: @price__extra-html-spacing;
+    line-height: 1.2;
+  }
+}
+
+.priceWrapperFinalPrice,
+.priceWrapperComplexPrice,
+.priceWrapperDirectPrice,
+.priceWrapperTierPrice,
+.exVat {
+  font-weight: @font-weight__bold;
+}
+
+.priceWrapperFinalPrice {
+  color: @price__color--final;
+}
+
+.priceRowWrapper {
+  .font-size(@price__font-size--product-direct);
+  color: @price__color--direct;
+}
+
+.priceWrapperComplexPrice {
+  .font-size(@price__font-size--product-complex);
+  display: flex;
+  align-items: center;
+  color: @price__color--complex;
+
+  &:before {
+    height: 15px;
+    width: 1px;
+    background-color: @price__border-color-pricing;
+    content: '';
+  }
+
+  &Overview {
+    color: @color__gray;
+    font-weight: @font-weight__regular;
+  }
+}
+
+.priceWrapperDirectPrice {
+  .font-size(@price__font-size--product-direct);
+  color: @price__color--direct;
+}
+
+.priceWrapperTierPrice {
+  .font-size(@price__font-size--product-tier);
+  color: @price__color--tier;
+}
+
+.complexPriceSuffix {
+  .font-size(@price__info--font-size);
+  line-height: 1.2;
+}
+
+.exVat {
+  .font-size(@price__info--font-size);
+  display: block;
+  color: @price__label-color--exVat;
+}
+
+.priceWrapperExtraInfo {
+  width: 100%;
+  margin: @indent__s 0;
+  padding: @indent__s 0;
+  color: @price__text-color;
+  border-top: 1px solid @price__border-color;
+  border-bottom: 1px solid @price__border-color;
+
+  input[type="checkbox"] {
+    display: none;
+
+    &:checked {
+      ~ .extraPriceInfoToggle {
+        display: flex;
+      }
+
+      ~ label {
+        &::after {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  label {
+    .iconAfter('arrow-down-grey', 10px, 10px);
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .extraPriceInfoToggle {
+    display: none;
+  }
+}
+
+.extraPriceInfoToggle {
+  width: 100%;
+  flex-direction: column;
+  margin-top: @indent__xs;
+}
+
+.priceRow {
+  width: percentage(4/5);
+  display: flex;
+  padding: @indent__xs 0 0;
+}
+
+.priceRowWrapper {
+  font-weight: @font-weight__bold;
+}
+
+.priceLabel {
+  width: percentage(1/2);
+}
+
+.lowerCase {
+  text-transform: lowercase;
+}
+
+.detail {
+  margin-bottom: @indent__s;
+
+  > div:first-of-type {
+    padding-right: @price__spacing--detail;
+  }
+
+  .priceWrapperFinalPrice {
+    .font-size(@price__font-size--product-final--detail);
+  }
+
+  .priceWrapperComplexPrice {
+    &:before {
+      margin-right: @price__spacing--detail;
+    }
+  }
+}
+
+.listing {
+  > div:first-of-type {
+    padding-right: @price__spacing--listing;
+  }
+
+  .priceWrapperFinalPrice {
+    .font-size(@price__font-size--product-final--listing);
+  }
+
+  .priceWrapperComplexPrice {
+    &:before {
+      margin-right: @price__spacing--listing;
+    }
+  }
+}

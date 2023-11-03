@@ -1,0 +1,67 @@
+@import (reference) '../../web/theme';
+
+.root {
+  background-color: @color__white;
+  color: @color__black;
+  position: relative;
+  z-index: 1;
+}
+
+.root_masked {
+  composes: root;
+}
+
+.page {
+  width: 100%;
+  max-width: @document__max-width;
+  margin: 0 auto;
+  padding: @indent__base @document__indent @indent__xl @document__indent;
+}
+
+.page_masked {
+  composes: page;
+}
+
+@media @desktopL {
+  .page {
+    min-height: calc(~'100vh - 140px');
+  }
+
+  body[bmn_app="1"] {
+    .page {
+      min-height: 100%;
+    }
+  }
+}
+
+@media @tabletL-XL {
+  .page {
+    min-height: calc(~'100vh - 150px');
+  }
+
+  body[bmn_app="1"] {
+    .page {
+      min-height: 100%;
+    }
+  }
+}
+
+@media @mobileL {
+  .root {
+    margin-top: 115px;
+  }
+
+  .page {
+    min-height: calc(~'100vh - 110px');
+  }
+
+  body[bmn_app="1"] {
+    .root {
+      margin-top: 0;
+    }
+
+    .page {
+      min-height: 100%;
+    }
+  }
+}

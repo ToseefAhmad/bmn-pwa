@@ -1,0 +1,31 @@
+{
+    "name": "BMN Bouwmaterialen",
+    "short_name": "BMN",
+    "start_url": "/",
+    "theme_color": "#FF5700",
+    "display": "standalone",
+    "background_color": "#fff",
+    "description": "BMN (Bouwmaterialen Nederland) is de bouwmaterialen groothandel en leverancier met de beste service, de juiste voorraad, flexibele logistiek, vakkundig personeel en uitgebreide webshop.",
+    "icons": [
+        {
+            "src": "/bmn-static/icons/bmn-icon-57x57.png",
+            "sizes": "57x57",
+            "type": "image/png"
+        },
+        {
+            "src": "/bmn-static/icons/bmn-icon-72x72.png",
+            "sizes": "72x72",
+            "type": "image/png"
+        },
+        {
+            "src": "/bmn-static/icons/bmn-icon-114x114.png",
+            "sizes": "114x114",
+            "type": "image/png"
+        },
+        {
+            "src": "/bmn-static/icons/bmn-icon-144x144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        }
+    ]
+}

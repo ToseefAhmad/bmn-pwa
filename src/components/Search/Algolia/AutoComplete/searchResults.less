@@ -1,0 +1,127 @@
+@import (reference) '../../../../web/theme';
+
+.searchResults__wrapper,
+.searchResults__link,
+.searchResults__imageWrapper,
+.searchResults__infoWrapper,
+.searchResults__secondaryData,
+.searchResults__allResultsWrapper {
+  display: flex;
+}
+
+.searchResults__link {
+  width: ~"calc(100% - @{searchResult__thumbnail-width} - @{searchResult__indent})";
+  color: @searchResult__link-color;
+}
+
+.searchResults__container {
+  max-height: 50vh;
+  overflow: auto;
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-bottom: @indent__sm;
+
+    li {
+      display: flex;
+      padding: @searchResult__indent;
+      background-color: @searchResult__wrapper-background;
+
+      &:hover {
+        background-color: @searchResult__wrapper-background--hover;
+
+        .searchResults__link {
+          color: @searchResult__link-color--hover;
+        }
+      }
+    }
+  }
+}
+
+.searchResults__wrapper,
+.searchResults__infoWrapper {
+  width: 100%;
+}
+
+.searchResults__imageWrapper {
+  display: flex;
+  width: @searchResult__thumbnail-width;
+  height: @searchResult__thumbnail-height;
+  margin: 0 @searchResult__indent;
+}
+
+.searchResults__infoWrapper {
+  flex-direction: column;
+  width: ~"calc(100% - @{searchResult__thumbnail-width} - (@{searchResult__indent} * 2))";
+}
+
+.searchResults__secondaryData {
+  .font-size(@font-size__s);
+  color: @searchResult__secondaryData-color;
+}
+
+.searchResults__allResultsWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: @searchResult__indent;
+  background-color: @searchResult__allResult-background-color;
+  font-weight: @font-weight__bold;
+  z-index: 1;
+
+  a {
+    color: @searchResult__allResult-color;
+
+    span {
+      padding-left: @indent__xs;
+      color: @searchResult__allResult-query-color;
+
+      &:hover {
+        .textDecorationUnderline;
+      }
+    }
+  }
+}
+
+@media @desktopXXL {
+  .searchResults__container {
+    ul {
+      li {
+        width: percentage(1 / @searchResult__desktopColumnQty);
+      }
+    }
+  }
+}
+
+@media @tabletL-XXL {
+  .searchResults__container {
+    ul {
+      li {
+        width: percentage(1 / @searchResult__largeTabletColumnQty);
+      }
+    }
+  }
+}
+
+@media @tabletM-L {
+  .searchResults__container {
+    ul {
+      li {
+        width: percentage(1 / @searchResult__smallTabletColumnQty);
+      }
+    }
+  }
+}
+
+@media @mobileM {
+  .searchResults__container {
+    ul {
+      li {
+        width: percentage(1 / @searchResult__mobileColumnQty);
+      }
+    }
+  }
+}

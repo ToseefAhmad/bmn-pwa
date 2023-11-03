@@ -1,0 +1,31 @@
+.cookieNotice {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 750px;
+  width: calc(100% - 40px);
+  padding: 30px;
+  background: #ffffff;
+  z-index: 200;
+}
+
+.cookieNotice p {
+  margin-bottom: 20px;
+}
+
+.cookieNotice a {
+  display: block;
+  margin-bottom: 10px;
+}
+.cookieNotice a:hover {
+  text-decoration: underline;
+}
+
+.cookieNotice span {
+  display: inline-block
+}
+
+.cookieNoticeMask > button {
+  cursor: default
+}

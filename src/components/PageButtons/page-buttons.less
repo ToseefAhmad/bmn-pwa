@@ -1,0 +1,39 @@
+@import (reference) '../../web/theme';
+
+.pageButtons {
+  position: fixed;
+  bottom: @indent__m;
+  right: @indent__m;
+  z-index: 100;
+  max-width: 50px;
+}
+
+.mailIcon {
+  display: flex;
+
+  &:hover {
+    svg {
+      stroke: @color__orange;
+    }
+  }
+}
+
+.pageUp {
+  &:hover,
+  &:focus {
+    .pageUpIcon {
+      .icon('arrow-down-primary', 18px, 18px);
+    }
+  }
+}
+
+.pageUpIcon {
+  .icon('arrow-down', 18px, 18px);
+  transform: rotate(180deg);
+}
+
+@media @mobileL {
+  .pageButtons {
+    bottom: @indent__xxl;
+  }
+}

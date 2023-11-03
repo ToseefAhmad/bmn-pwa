@@ -1,0 +1,24 @@
+.root {
+  position: fixed;
+  z-index: 6;
+  top: 115px;
+  margin-top: 1rem;
+  max-width: 1440px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  body:not([data-sticky="1"]) .root {
+    position: absolute;
+  }
+
+  body[data-sticky="1"] .root {
+    top: 75px;
+  }
+
+  .root {
+    top: 142px;
+  }
+}

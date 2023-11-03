@@ -1,0 +1,6 @@
+mutation saveWebform($input: WebFormInput!) {
+  saveWebform(input: $input) {
+    __typename
+    message
+  }
+}

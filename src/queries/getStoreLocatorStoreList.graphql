@@ -1,0 +1,17 @@
+query getStoreLocatorStoreList($ids: [String]) {
+	storeLocatorStoreList(ids: $ids) {
+		stores {
+      id
+      name
+      location
+      street
+      zip
+      city
+      phone
+      url
+      latitude
+      longitude
+      marker_class
+    }
+	}
+}

@@ -1,0 +1,46 @@
+@import (reference) '../../../web/theme';
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 @indent__s;
+  background: @filter-item__background;
+  border-radius: @filter-item__border-radius;
+  height: @indent__base;
+}
+
+.text {
+  display: block;
+  color: @filter-item__text-color;
+  font-weight: @font-weight__bold;
+  font-size: 12px;
+  line-height: 0;
+}
+
+.icon {
+  display: block;
+  margin-top: 3px;
+  margin-left: @indent__xs;
+
+  svg {
+    stroke: @filter-item__icon-color;
+    stroke-width: 4px;
+  }
+}
+
+@media @mobileL {
+  .wrapper {
+    margin-right: @indent__xs;
+
+    &:not(:first-of-type) {
+      margin-left: @indent__xs;
+    }
+  }
+}
+
+@media @desktopL {
+  .wrapper {
+    margin: 0 @indent__xs;
+  }
+}

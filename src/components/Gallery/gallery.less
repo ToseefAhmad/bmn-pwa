@@ -1,0 +1,36 @@
+@import (reference) '../../web/theme';
+
+.root {}
+
+.items {
+  .gridContainer;
+  margin-bottom: @indent__s;
+}
+
+.items__linkedProducts {
+  background: black;
+}
+
+@media @desktopXXL {
+  .items {
+    .grid(4, @indent__base);
+  }
+}
+
+@media @tabletM-XXL {
+  .items {
+    .grid(3, @indent__base);
+  }
+}
+
+@media @tabletXS-M {
+  .items {
+    .grid(2, @indent__base);
+  }
+}
+
+@media @mobileXS {
+  .items {
+    .grid(1, 0px);
+  }
+}

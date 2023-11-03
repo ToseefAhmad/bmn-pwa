@@ -1,0 +1,17 @@
+@import (reference) '../../web/theme';
+
+.filterButton {
+  margin-left: @indent__s;
+  display: inline-block;
+  padding: @indent__xs @indent__base;
+  border: 2px solid @color__gray-light;
+  border-radius: 3px;
+  color: @color__black;
+  outline: none;
+}
+
+@media (min-width: 1024px) {
+    .filterButton {
+        display: none;
+    }
+}

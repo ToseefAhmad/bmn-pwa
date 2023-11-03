@@ -1,0 +1,6 @@
+query getCartCmsBlock {
+  storeConfig {
+    id
+    cart_pwa_cms_block
+  }
+}

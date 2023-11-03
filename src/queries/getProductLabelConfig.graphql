@@ -1,0 +1,7 @@
+query getProductLabelConfig {
+  storeConfig {
+    id
+    product_labels_general_enabled
+    product_labels_general_view_on_image_gallery
+  }
+}

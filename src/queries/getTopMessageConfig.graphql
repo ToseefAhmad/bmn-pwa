@@ -1,0 +1,6 @@
+query getTopMessageConfig {
+  storeConfig {
+    id
+    theme_header_top_message
+  }
+}

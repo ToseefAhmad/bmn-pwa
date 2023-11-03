@@ -1,0 +1,52 @@
+query storeConfigData {
+    storeConfig {
+        id
+        default_title
+        theme_footer_above_footer_message
+        theme_footer_above_footer_links {
+          title
+          url
+        }
+        theme_footer_above_footer_logo
+        secure_base_media_url
+        copyright
+        theme_footer_column_title_1
+        theme_footer_column_1 {
+          title
+          url
+          is_external_url
+          opens_in_new_page
+        }
+        theme_footer_column_title_2
+        theme_footer_column_2 {
+          title
+          url
+          is_external_url
+          opens_in_new_page
+        }
+        theme_footer_column_title_3
+        theme_footer_column_3 {
+          title
+          url
+          is_external_url
+          opens_in_new_page
+        }
+        theme_footer_column_title_4
+        theme_footer_column_4 {
+          title
+          url
+          is_external_url
+          opens_in_new_page
+        }
+        theme_social_title_social
+        theme_social_facebook
+        theme_social_linkedin
+        theme_social_youtube
+        theme_footer_copyright_links {
+          title
+          url
+          is_external_url
+          opens_in_new_page
+        }
+    }
+}

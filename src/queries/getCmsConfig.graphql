@@ -1,0 +1,11 @@
+query getCmsConfig {
+  storeConfig {
+    id
+    front
+    cms_home_page
+    no_route
+    cms_no_route
+    cms_no_cookies
+    show_cms_breadcrumbs
+  }
+}

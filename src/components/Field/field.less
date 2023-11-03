@@ -1,0 +1,20 @@
+.field__container,
+.field__label,
+.field__isRequired {
+  display: flex;
+}
+
+.field__container {
+  flex-direction: column;
+}
+
+.field__isRequired {
+  .field__label {
+    &:after {
+      content: "*";
+      color: #e02b27;
+      font-size: 1.2rem;
+      margin: 0 0 0 5px;
+    }
+  }
+}

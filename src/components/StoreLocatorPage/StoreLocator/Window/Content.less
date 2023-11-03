@@ -1,0 +1,31 @@
+@import (reference) '../../../../web/theme';
+
+.sl__content {
+  margin-bottom: @indent__s;
+}
+
+.sl__iwText {
+  display: block;
+  margin-bottom: @indent__xs;
+}
+
+.sl__iwTitle {
+  .font-size(@font-size__m);
+  display: block;
+  margin-bottom: @indent__s;
+}
+
+.sl__iwCall:hover {
+  text-decoration: underline;
+}
+
+.sl__button {
+  button {
+    .button;
+    display: inline-block;
+    padding: @button__padding;
+    margin-top: @indent__s;
+    cursor: pointer;
+    user-select: none;
+  }
+}

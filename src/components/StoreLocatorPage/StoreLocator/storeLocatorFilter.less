@@ -1,0 +1,45 @@
+@import (reference) '../../../web/theme';
+
+@default__padding: @indent__s + @indent__xs;
+
+.sl__filter {
+  display: block;
+
+  &Head {
+    background: @color__primary;
+    padding: @default__padding;
+    color: @color__white;
+
+    > span {
+      display: block;
+      margin-bottom: @indent__s;
+    }
+
+    button {
+      .iconAfter(geo-white, 15px, 15px);
+      color: @color__white;
+      margin: @indent__s 0 0 auto;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &Results {
+    border: solid @color__gray-light;
+    border-width: 0 1px 1px 1px;
+  }
+}
+
+@media @desktopM {
+  .sl__filter {
+    width: percentage(440/(@document__max-width - (2 * @document__indent)));
+  }
+}
+
+@media @mobileM {
+  .sl__filter {
+    width: 100%;
+  }
+}

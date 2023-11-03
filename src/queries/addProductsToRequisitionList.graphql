@@ -1,0 +1,17 @@
+mutation addProductsToRequisitionList(
+  $requisitionListUid: ID!,
+  $requisitionListItems: [RequisitionListItemsInput!]!
+) {
+  addProductsToRequisitionList(
+    requisitionListUid: $requisitionListUid,
+    requisitionListItems: $requisitionListItems
+  ) {
+    requisition_list {
+      uid
+      name
+      description
+      items_count
+      updated_at
+    }
+  }
+}

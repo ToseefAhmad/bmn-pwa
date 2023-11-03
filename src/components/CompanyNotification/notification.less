@@ -1,0 +1,23 @@
+@import (reference) '../../web/theme';
+
+.notification {
+  display: block;
+  margin: 0;
+  padding: @indent__s @indent__m;
+  line-height: 1.2em;
+  font-size: 1.3rem;
+  color: @color__white;
+  text-align: center;
+
+  &__blocked {
+    background: #ff0101;
+  }
+
+  &__rejected {
+    background: #ff0101;
+  }
+
+  &__pending {
+    .message(@message__error-color, @message__error-background-color, 0, 10px 20px);
+  }
+}

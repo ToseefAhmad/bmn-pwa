@@ -1,0 +1,76 @@
+@import (reference) '../../../../web/theme';
+
+@default__padding: @indent__s + @indent__xs;
+@background-color__item-hover: #f2f0f0;
+
+.sl__filterItem {
+  display: flex;
+  justify-content: space-between;
+  padding: @default__padding @default__padding @indent__xl @default__padding;
+  color: @color__black;
+  background-color: @color__white;
+  transition: background-color 200ms linear;
+
+  &Wrapper {
+    position: relative;
+  }
+
+  &:hover {
+    background-color: @background-color__item-hover;
+
+    .sl__filterItemViewLocation {
+      text-decoration: none;
+    }
+  }
+
+  > * {
+    flex: 1;
+  }
+
+  &Text {
+    .font-size(@font-size__xs);
+    display: block;
+  }
+
+  &:not(:last-of-type) {
+    border-bottom: 1px solid @color__gray-light;
+  }
+
+  &Title {
+    .font-size(@font-size__m);
+    color: @color__primary;
+    margin-bottom: @indent__xs;
+  }
+
+  &LocationDetails {
+    text-align: right;
+  }
+
+  &Distance {
+    .iconBefore(geo-black, 15px, 15px);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: @indent__s;
+    font-weight: @font-weight__bold;
+  }
+
+  &ViewLocation {
+    color: @color__black;
+
+    &:not(:hover) {
+      text-decoration: underline;
+    }
+  }
+
+  &PlanRoute {
+    position: absolute;
+    bottom: @default__padding;
+    left: @default__padding;
+    font-size: @font-size__s;
+
+    &:not(:hover) {
+      text-decoration: underline;
+    }
+  }
+}

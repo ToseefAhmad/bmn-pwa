@@ -1,0 +1,23 @@
+@import (reference) '../../web/theme';
+
+.message {
+  display: flex;
+  margin: @message__margin;
+  padding: @message__padding;
+
+  &:last-of-type {
+    margin: 0;
+  }
+
+  &__success {
+    .message;
+  }
+
+  &__notice {
+    .message(@message__notice-color, @message__notice-background-color);
+  }
+
+  &__error {
+    .message(@message__error-color, @message__error-background-color);
+  }
+}

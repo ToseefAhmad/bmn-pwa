@@ -1,0 +1,16 @@
+query getRequisitionLists {
+  requisitionLists {
+    id
+    name
+    description
+    items {
+      id
+      requisition_list_id
+      sku
+      qty
+      store_id
+      added_at
+    }
+    updated_at
+  }
+}

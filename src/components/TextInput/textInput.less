@@ -1,0 +1,45 @@
+@import (reference) '../../web/theme';
+
+input[type="text"],
+input[type="number"],
+input[inputmode="numeric"],
+input[type="email"],
+input[type="password"],
+input[google],
+textarea {
+  .transition;
+  background: @input__background-color;
+  border: @input__border;
+  border-radius: @input__border-radius;
+  color: @input__color;
+  height: @input__height;
+  padding: @input__padding;
+  user-select: none;
+  width: 100%;
+
+  &:hover,
+  &:focus {
+    background-color: @input__background-color;
+    border-color: @color__primary;
+    color: @color__black;
+    outline: none;
+  }
+
+  &::placeholder {
+    color: @input__placeholder-color;
+  }
+}
+
+textarea {
+  padding: 15px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}

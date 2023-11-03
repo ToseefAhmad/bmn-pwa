@@ -1,0 +1,61 @@
+@import (reference) '../../web/theme';
+
+.link {
+  .iconBefore('pdf', 22px, 25px, 0 @indent__xs 0 0);
+
+  > span:not(:first-of-type) {
+    margin-left: @indent__xs;
+    color: @color__black;
+  }
+
+  &:before {
+    margin-right: @indent__s;
+  }
+
+  &:hover {
+    > span:first-of-type {
+      text-decoration: underline;
+    }
+  }
+}
+
+.pdp__h2 {
+  .font-size(@font-size__l);
+  margin: 0 0 @indent__s;
+}
+
+@media @mobileM {
+  .link {
+    > span:nth-child(2) {
+      display: none;
+    }
+  }
+
+  .table__attachment {
+    dt {
+      width: calc(~'100% - 135px');
+    }
+
+    dd {
+      width: 135px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1340px) {
+  .link {
+    > span:nth-child(2) {
+      display: none;
+    }
+  }
+
+  .table__attachment {
+    dt {
+      width: calc(~'100% - 135px');
+    }
+
+    dd {
+      width: 135px;
+    }
+  }
+}

@@ -1,0 +1,154 @@
+@import (reference) '../../web/theme';
+
+.wrapper {
+  position: relative;
+  margin-bottom: @indent__base;
+
+  img {
+    display: block;
+    margin: 0 auto;
+    align-self: center;
+    justify-self: center;
+    max-width: calc(100% - @indent__xs);
+  }
+
+  [class*="tns-slider"],
+  [class*="tns-item"] {
+    display: flex !important;
+  }
+}
+
+.sliderWrapper {
+  display: flex;
+  width: 100%;
+}
+
+.thumbs {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  div,
+  img {
+    outline: none;
+  }
+
+  img {
+    float: left;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: calc(percentage(1/5) - @indent__m);
+    margin: @indent__s;
+    transition: unset;
+    padding: @indent__s;
+
+    &:focus,
+    &:hover {
+      cursor: pointer;
+    }
+
+    &[class*="tns-nav-active"] {
+      outline: 2px solid @color__primary;
+    }
+  }
+}
+
+.buttons__wrapper {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+
+  &.image {
+    width: percentage(9/10);
+    left: percentage(1/20);
+    top: percentage(1/2);
+  }
+
+  &.list {
+    width: 50px;
+    top: -@indent__lxl;
+    right: 0;
+  }
+
+  .button {
+    &__prev,
+    &__next {
+      .iconAfter('arrow-down-black', @indent__ml, @indent__ml);
+      margin: 0;
+      display: block;
+
+      &:focus,
+      &:hover {
+        cursor: pointer;
+        transition: none;
+      }
+    }
+
+    &__prev {
+      &:after {
+        transform: rotate(90deg);
+        margin: 0;
+      }
+    }
+
+    &__next {
+      &:after {
+        transform: rotate(-90deg);
+        margin: 0;
+      }
+    }
+  }
+}
+
+[class="tns-outer"] [data-role="requisition-list-listing"] {
+  top: auto;
+  bottom: 55px;
+  transform: translateX(-60%);
+  margin: 0;
+
+  &:before {
+    top: auto;
+    bottom: -12px;
+    left: auto;
+    right: 65px;
+    border-color: @color__gray transparent transparent;
+  }
+}
+
+@media @desktopL {
+  .wrapper {
+    img {
+      max-height: 430px;
+    }
+  }
+}
+
+@media @mobileL {
+  .wrapper {
+    img {
+      max-height: 53vw;
+    }
+  }
+}
+
+@media @desktopM {
+  .thumbs {
+    img {
+      max-height: 100px;
+    }
+  }
+}
+
+@media @mobileM {
+  .thumbs {
+    img {
+      max-height: 75px;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+query megaMenuData {
+  megaMenuData {
+    menu {
+      menu_html
+    }
+  }
+}

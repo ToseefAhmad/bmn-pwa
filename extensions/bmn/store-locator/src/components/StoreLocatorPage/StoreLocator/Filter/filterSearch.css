@@ -1,0 +1,57 @@
+input.filterSearchInput {
+  border: 0;
+}
+.filterSearch {
+  position: relative;
+}
+.filterSearch:after {
+  content: '';
+  display: block;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  top: 11px;
+  right: 15px;
+  background-image: url('./Icon/search.svg');
+  background-size: cover;
+  pointer-events: none;
+}
+.filterSearchInput {
+  padding-right: 50px;
+}
+.filterSearchDropdown {
+  position: absolute;
+  top: calc(100% - 1px);
+  width: 100%;
+  color: #000000;
+  background-color: #ffffff;
+  z-index: 1;
+}
+.filterSearchDropdownBorder {
+  border: 1px solid #eee;
+}
+.filterSearchDropdownBorder > [role="option"] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  cursor: pointer;
+}
+.filterSearchDropdownBorder > [role="option"]:not(:last-of-type) {
+  border-bottom: 1px solid #eee;
+}
+.filterSearchDropdownBorder > [role="option"]:before {
+  content: '';
+  background-image: url('../Marker/Icon/marker.svg');
+  display: block;
+  width: 15px;
+  height: 15px;
+  background-size: cover;
+}
+.filterSearchDropdownBorder > [role="option"] > span {
+  display: block;
+  width: calc(100% - 25px);
+}
+.filterSearchSuggestionActive {
+  background-color: #eee;
+}

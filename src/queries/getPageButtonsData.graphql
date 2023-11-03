@@ -1,0 +1,9 @@
+query storeConfigData {
+    storeConfig {
+        id
+        theme_page_buttons_back_to_top_button
+        theme_page_buttons_chat_button
+        theme_page_buttons_contact_button
+        theme_page_buttons_contact_url
+    }
+}

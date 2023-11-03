@@ -1,0 +1,41 @@
+.sl__content {
+  margin-bottom: 10px;
+}
+
+.sl__iwText {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.sl__iwTitle {
+  font-size: 14px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.sl__iwCall:hover {
+  text-decoration: underline;
+}
+
+.sl__button button {
+  background-color: #ff5700;
+  color: #ffffff;
+  border: none #d64901;
+  border-radius: 3px;
+  border-bottom: 3px solid #d64901;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 22px;
+  margin-top: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.sl__button button:hover,
+.sl__button button:focus,
+.sl__button button:active {
+  background-color: #d64901;
+  color: #ffffff;
+  border-color: transparent;
+  text-decoration: none;
+}

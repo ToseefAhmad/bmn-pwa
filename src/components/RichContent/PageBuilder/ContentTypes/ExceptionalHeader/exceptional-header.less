@@ -1,0 +1,63 @@
+@import (reference) '../../../../../web/theme';
+
+.ecpHeader {
+  position: relative;
+
+  &__body {
+    min-height: 200px;
+  }
+
+  &__picture {
+    height: 620px;
+    background-size: cover;
+    background-position: 50%;
+  }
+
+  &__content {
+    position: absolute;
+    top: 44%;
+    z-index: 0;
+    transform: translateY(-44%);
+  }
+
+  &__title,
+  &__subtitle,
+  [data-element="exceptional_header_title"],
+  [data-element="exceptional_header_subtitle"] {
+    padding: @indent__xs @indent__base;
+  }
+
+  &__title,
+  [data-element="exceptional_header_title"] {
+    .font-size(50);
+    display: block;
+  }
+  &__subtitle,
+  [data-element="exceptional_header_subtitle"]{
+    .font-size(@font-size__xxxl);
+    display: inline-block;
+    margin-left: @indent__base;
+  }
+}
+
+@media @desktopM {
+  .ecpHeader {
+    &__content {
+      left: 20px;
+    }
+  }
+}
+
+@media @mobileM {
+  .ecpHeader {
+    &__picture {
+      height: 100vw;
+      max-height: 600px;
+    }
+
+    &__title,
+    [data-element="exceptional_header_title"] {
+      .font-size(34);
+    }
+  }
+}

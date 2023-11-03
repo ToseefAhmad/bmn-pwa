@@ -1,0 +1,49 @@
+@import (reference) '../../web/theme';
+
+.root {
+  --borderColor: var(--venia-global-color-border);
+  background-color: white;
+  bottom: 0;
+  display: none;
+  grid-template-rows: 1fr 7rem;
+  max-width: 360px;
+  width: 100%;
+  z-index: 3;
+}
+
+.body {
+  overflow: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.headerTitle {
+  .font-size(@font-size__xl);
+  display: flex;
+  align-items: center;
+  line-height: 0.875rem;
+}
+
+.action {
+}
+
+.action button {
+  font-size: var(--venia-typography-body-S-fontSize);
+  text-decoration: none;
+}
+
+.blocks {
+}
+
+.blocks > li:last-child {
+  border-bottom: 2px solid rgb(var(--borderColor));
+}
+
+@media (min-width: 1024px) {
+  .root {
+    display: grid;
+  }
+}

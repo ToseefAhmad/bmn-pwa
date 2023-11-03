@@ -1,0 +1,70 @@
+@import (reference) '../../../../../web/theme';
+
+//
+// Select styles
+// -------------------------------
+.select {
+  select {
+    width: 100%;
+    height: 45px;
+    padding: 0 @indent__sm;
+    border: 2px solid @border-color__dark;
+    border-radius: @border-radius__default;
+    background-color: @color__white;
+    background-image: url('../../../../../web/icons/arrow-down-black.svg');
+    background-repeat: no-repeat;
+    background-position: 98% 50%;
+    background-size: 14px;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    .transition();
+
+    &:hover,
+    &:focus {
+      border-color: @color__primary;
+      cursor: pointer;
+    }
+
+    &:focus {
+      background-image: url('../../../../../web/icons/arrow-up-black.svg');
+    }
+  }
+}
+
+//
+// Radio/Checkbox styles
+// -------------------------------
+.group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+
+  label {
+    width: 100%;
+  }
+
+  .inputField {
+    padding: @indent__s;
+    margin: 0;
+
+    &:first-of-type {
+      padding-left: 0;
+    }
+  }
+}
+.radio {
+  display: inline;
+  padding: @indent__s;
+}
+
+//
+// Field Comment styles
+// -------------------------------
+.fieldComment {
+  margin-top: @indent__xs;
+}

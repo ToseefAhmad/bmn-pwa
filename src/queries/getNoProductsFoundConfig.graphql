@@ -1,0 +1,6 @@
+query getNoProductsFoundConfig {
+  storeConfig {
+    id
+    catalog_pwa_catalog_pages_cms_block_no_products
+  }
+}

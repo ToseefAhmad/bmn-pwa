@@ -1,0 +1,5 @@
+mutation deleteRequisitionList($uid: ID!) {
+    deleteRequisitionList(requisitionListUid: $uid) {
+        status
+    }
+}

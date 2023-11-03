@@ -1,0 +1,71 @@
+@import (reference) '../../../../web/theme';
+
+input.filterSearchInput {
+  border: 0
+}
+
+.filterSearch {
+  position: relative;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    top: 11px;
+    right: 15px;
+    background-image: url('./Icon/search.svg');
+    background-size: cover;
+    pointer-events: none;
+  }
+
+  &Input {
+    padding-right: 50px;
+  }
+
+  &Dropdown {
+    position: absolute;
+    top: calc(~'100% - 1px');
+    width: 100%;
+    color: @color__black;
+    background-color: @color__white;
+    z-index: 1;
+
+    &Border {
+      border: @default__border;
+
+      > [role="option"] {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: @indent__s;
+        cursor: pointer;
+
+        &:not(:last-of-type) {
+          border-bottom: @default__border;
+        }
+
+        &:before {
+          content: '';
+          background-image: url('../Marker/Icon/marker.svg');
+          display: block;
+          width: 15px;
+          height: 15px;
+          background-size: cover;
+        }
+
+        > span {
+          display: block;
+          width: calc(~'100% - 25px');
+        }
+      }
+    }
+  }
+
+  &Suggestion {
+    &Active {
+      background-color: @default__border-color;
+    }
+  }
+}

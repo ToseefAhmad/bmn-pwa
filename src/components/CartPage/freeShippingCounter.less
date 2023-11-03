@@ -1,0 +1,30 @@
+@import (reference) '../../web/theme';
+
+@fsc__color_green: #005200;
+@fsc__color_gray: #E3E5E3;
+
+.fsc {
+  position: relative;
+  width: 100%;
+  margin-top: @indent__xs;
+  padding: 8px @indent__s;
+  background-color: @fsc__color_gray;
+  color: @fsc__color_green;
+
+  &:after {
+    .lib-triangle(@color: @fsc__color_gray);
+    right: @indent__s;
+    top: -@indent__s;
+  }
+
+  .fsc__infoIcon {
+    .icon('info-green', 15px, 16px);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .fsc__content {
+    padding-left: @indent__base + @indent__xs;
+  }
+}

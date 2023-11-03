@@ -1,0 +1,55 @@
+@import (reference) '../../../../../web/theme';
+
+.form__container {
+  display: block;
+  width: 100%;
+
+  div {
+    margin: @indent__sm 0;
+
+    [class*="select"] {
+      margin: 0;
+
+      div {
+        margin: 0;
+        color: @color__gray-dark;
+      }
+    }
+    [class="Dropdown-control"] {
+      border-width: 2px;
+
+      &:hover,
+      &:focus {
+        border-color: @color__primary;
+      }
+    }
+  }
+}
+
+.message__container {
+  display: block;
+  width: 100%;
+
+  .success {
+    box-sizing: border-box;
+    background: lighten(@message__success-color, 40%);
+    border: 1px solid @message__success-color;
+    padding: @indent__sm;
+    color: @message__success-color;
+  }
+
+  .reset {
+    width: 100%;
+    margin-top: @indent__s;
+
+    span {
+      text-decoration: underline;
+      cursor: pointer;
+
+      &:hover,
+      &:focus {
+        color: @color__primary;
+      }
+    }
+  }
+}

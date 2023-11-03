@@ -1,0 +1,82 @@
+@icon__folder: './icons/';
+
+@icon__width-default: 20px;
+@icon__height-default: 20px;
+@icon__indent-default: 10px;
+
+.icon(
+  @name: '',
+  @width: @icon__width-default,
+  @height: @icon__height-default,
+  @indent: 0
+) {
+  display: flex;
+  align-items: center;
+  width: @width;
+  min-width: @width;
+  height: @height;
+  margin: @indent;
+  background-image: url(~"@{icon__folder}@{name}.svg");
+  background-size: @width @height;
+  background-repeat: no-repeat;
+}
+
+.iconSrc(@name) {
+  background-image: url(~"@{icon__folder}@{name}.svg");
+}
+
+.iconBefore(
+  @name: '',
+  @width: @icon__width-default,
+  @height: @icon__height-default,
+  @indent: 0 @icon__indent-default 0 0
+) {
+  display: flex;
+  align-items: center;
+
+  &:before {
+    display: inline-block;
+    width: @width;
+    min-width: @width;
+    height: @height;
+    margin: @indent;
+    background-image: url(~"@{icon__folder}@{name}.svg");
+    background-size: @width @height;
+    background-repeat: no-repeat;
+    content: '';
+  }
+}
+
+.iconBeforeSrc(@name) {
+  &:before {
+    background-image: url(~"@{icon__folder}@{name}.svg");
+  }
+}
+
+.iconAfter(
+  @name: '',
+  @width: @icon__width-default,
+  @height: @icon__height-default,
+  @indent: 0 0 0 @icon__indent-default
+) {
+  display: flex;
+  align-items: center;
+
+  &:after {
+    display: inline-block;
+    width: @width;
+    min-width: @width;
+    height: @height;
+    margin: @indent;
+    background-image: url(~"@{icon__folder}@{name}.svg");
+    background-size: @width @height;
+    background-repeat: no-repeat;
+    content: '';
+  }
+}
+
+.iconAfterSrc(@name) {
+  &:after {
+    background-image: url(~"@{icon__folder}@{name}.svg");
+  }
+}

@@ -1,0 +1,113 @@
+@import (reference) '../../web/theme';
+
+.root {
+  display: flex;
+  width: 100%;
+}
+
+h1.categoryTitle {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.contentWrapper {
+  width: percentage(4/5);
+}
+
+.page-2columns-left {
+  display: flex;
+}
+
+.sidebar {
+  width: percentage(1/5);
+  margin-right: @indent__xl;
+}
+
+.page-1column,
+.sidebar__container,
+.sidebar__wrapper {
+  width: 100%;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  padding: 0 0.5rem;
+}
+
+.pagination {
+  position: relative;
+  bottom: 0;
+}
+
+.placeholder {
+  height: 100vh;
+}
+
+.headerButtons {
+  display: flex;
+  justify-content: center;
+}
+
+.filterBtn {
+  display: none;
+  padding: @indent__s;
+  width: 100%;
+  border: 1px solid @color__primary;
+  border-radius: @border-radius__default;
+  color: @color__primary;
+  outline: none;
+  font-weight: @font-weight__bold;
+  .font-size(@font-size__m);
+}
+
+.filterList {
+  display: block;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  margin: @indent__base 0 @indent__s;
+}
+
+.h2 {
+  .font-size(@font-size__xxl);
+  margin: 0 @indent__s @indent__base;
+}
+
+.galleryItemsShimmer {
+  display: grid;
+  grid-area: items;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 10px;
+}
+
+@media @mobileL {
+  .h2 {
+    &:not(.categoryTitle) {
+      display: none;
+    }
+  }
+
+  .filterBtn {
+    display: block;
+    margin-top: @indent__l;
+  }
+
+  .filterList {
+    display: none;
+    padding-top: @indent__s;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .contentWrapper {
+    width: 100%;
+  }
+}

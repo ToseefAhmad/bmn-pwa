@@ -1,0 +1,7 @@
+query getDesignConfig {
+  storeConfig {
+    id
+    design_head_title_suffix
+    design_search_engine_robots_default_robots
+  }
+}

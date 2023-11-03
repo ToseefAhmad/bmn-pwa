@@ -1,0 +1,45 @@
+@import (reference) './../../web/theme.less';
+
+.root {}
+
+.wrapper {
+  color: @footer__color;
+  background-color: @footer__top-background-color;
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: @document__max-width;
+  margin: 0 auto;
+  padding: @document__indent;
+}
+
+.links {
+  a {
+    color: @footer__color;
+
+    &:hover {
+      .textDecorationUnderline()
+    }
+  }
+}
+
+@media @desktopM {
+  .root img {
+    max-height: 40px;
+  }
+}
+
+@media @mobileM {
+  .root img {
+    max-width: 90%;
+    max-height: 50px;
+    margin: 0 auto;
+  }
+
+  .links {
+    display: none;
+  }
+}

@@ -1,0 +1,104 @@
+@import (reference) '../../web/theme';
+
+@keyframes ellipsis {
+  to {
+    width: 1.25em;
+  }
+}
+
+@-webkit-keyframes ellipsis {
+  to {
+    width: 1.25em;
+  }
+}
+
+.storeStock {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: @indent__base;
+  font-weight: bold;
+  min-height: 40px;
+
+  &:before {
+    position: absolute;
+    left: 0;
+    top: 8px;
+  }
+
+  &__title {
+    .iconBefore('store', 28px, 23px, 0 @indent__xs 0 0);
+    .line-height(42);
+    margin-right: @indent__s;
+  }
+
+  &__dropdown_wrapper {
+    position: relative;
+    width: calc(~'100% - 125px');
+  }
+
+  &__stock {
+    display: block;
+    width: 100%;
+    margin-top: @indent__s;
+    padding-left: @indent__s;
+    white-space: nowrap;
+
+    &.available {
+      color: @color__green;
+    }
+
+    &.unavailable {
+      color: @color__red;
+    }
+  }
+}
+
+.loading:after {
+  content: "\2026";
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  animation: ellipsis steps(4, end) 900ms infinite;
+  -webkit-animation: ellipsis steps(4, end) 900ms infinite;
+  width: 0;
+}
+
+@media @desktopM {
+  .storeStock__dropdown_wrapper {
+    [class*="Dropdown-root"] {
+      max-width: 225px;
+      width: 100%;
+    }
+  }
+}
+
+@media @desktopL {
+  .storeStock {
+    padding: 0 @indent__base;
+
+    &__stock {
+      position: absolute;
+      top: 100%;
+      left: 0;
+    }
+  }
+}
+
+@media only screen and (min-width: 374px) {
+  .storeStock {
+    &__title {
+      width: 115px;
+    }
+  }
+}
+
+@media only screen and (max-width: 374px) {
+  .storeStock {
+    &__dropdown_wrapper {
+      width: 100%;
+      margin-top: @indent__xs;
+    }
+  }
+}

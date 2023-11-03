@@ -1,0 +1,31 @@
+query getStoreLocatorStore($url: String!) {
+  storeLocatorStore(url: $url) {
+    id
+    code
+    groups
+    name
+    description
+    location
+    latitude
+    longitude
+    page_title
+    page_text
+    opening_hours
+    street
+    street_2
+    city
+    state
+    zip
+    country
+    tag
+    url
+    phone
+    email
+    place_id
+    order_email
+    manager_name
+    store_banner
+    services
+    modified_opening_hours
+  }
+}

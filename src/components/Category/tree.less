@@ -1,0 +1,140 @@
+@import (reference) '../../web/theme';
+
+.arrowIcon {
+  display: none;
+}
+
+.treeContainer,
+.treeWrapper,
+.treeNode {
+  display: flex;
+}
+
+.treeContainer,
+.treeWrapper {
+  flex-direction: column;
+}
+
+.treeContainer {
+  width: 100%;
+
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .treeWrapper .treeWrapper {
+    &:not(:last-of-type) {
+      padding-bottom: @indent__xs;
+    }
+
+    .treeUrl a {
+      color: @category-tree__url-color-l2;
+    }
+  }
+}
+
+@media @desktopL {
+  .treeContainer {
+    > .treeWrapper {
+      margin-bottom: @category-tree__margin-l1;
+
+      .treeWrapper {
+        margin-left: @category-tree__margin-l2;
+      }
+    }
+
+    > .treeWrapper > .treeUrl {
+      padding-bottom: @indent__xs;
+    }
+  }
+
+  .treeUrl {
+    font-weight: @font-weight__semi-bold;
+  }
+}
+
+@media @mobileL {
+  .treeContainer {
+    margin: @category-tree__margin-l2 0 @category-tree__margin-l1;
+  }
+
+  [data-hierarchy-level="1"] {
+    width: 100%;
+    border-top: @default__border;
+    user-select: none;
+    cursor: pointer;
+
+    &:last-of-type {
+      border-bottom: @default__border;
+    }
+
+    &:not(.treeWrapper--open) {
+      .treeWrapper {
+        display: none;
+      }
+    }
+
+    &.treeWrapper--open {
+      padding-bottom: @indent__s;
+    }
+
+    > .treeUrl {
+      font-weight: @font-weight__semi-bold;
+
+      a {
+        padding: @indent__s 0;
+      }
+    }
+
+    &[data-node-has-children] {
+      .treeUrl {
+        justify-content: space-between;
+      }
+
+      > .treeUrl {
+        display: flex;
+        align-items: center;
+
+        .arrowIcon {
+          display: block;
+        }
+      }
+
+      &.treeWrapper--open {
+        > .treeUrl .arrowIcon {
+          transform: rotate(180deg);
+
+          .arrowIcon {
+            &[data-node-has-children="false"] {
+              display: none;
+            }
+          }
+        }
+      }
+
+      &[data-node-has-children="false"] {
+        > .treeUrl {
+          .arrowIcon {
+            transform: rotate(270deg);
+          }
+
+          a {
+            display: inline-block;
+            width: 100%;
+          }
+        }
+
+        &[data-hierarchy-level="1"] {
+          > .treeUrl {
+            .arrowIcon {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

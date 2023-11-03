@@ -1,0 +1,9 @@
+query getExceptionalPageConfig {
+  storeConfig {
+    id
+    exceptional_cms_page_general_identifiers {
+      exceptional_page_id
+      exceptional_page_default_color
+    }
+  }
+}

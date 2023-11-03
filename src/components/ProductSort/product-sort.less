@@ -1,0 +1,46 @@
+@import (reference) '../../web/theme';
+
+.root {
+  position: relative;
+}
+
+.sortButton {
+  .iconAfter(arrow-down-black, 12px, 10px);
+  margin-left: @indent__s;
+  display: inline-block;
+  padding: @indent__xs @indent__base;
+  border: 2px solid @color__gray-light;
+  border-radius: 3px;
+  color: @color__black;
+  outline: none;
+}
+
+.menu {
+  position: absolute;
+  z-index: 2;
+  top: 110%;
+  right: 0;
+  min-width: 10rem;
+  margin: 0.125rem 0 0;
+  font-size: 1rem;
+  color: black;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgb(var(--venia-grey-dark));
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.menuItem {
+  border-bottom: 1px solid rgb(var(--venia-grey-dark));
+}
+
+.menuItem:last-child {
+  border-bottom: none;
+}
+
+.menuItem:hover {
+  background-color: rgb(var(--venia-grey));
+}

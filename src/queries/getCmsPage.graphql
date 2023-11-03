@@ -1,0 +1,26 @@
+query getCmsPage(
+  $id: Int,
+  $identifier: String
+) {
+  cmsPage(
+    id: $id
+    identifier: $identifier
+  ) {
+    page_id
+    identifier
+    url_key
+    content
+    content_heading
+    title
+    page_layout
+    page_hierarchy {
+      id
+      url_key
+      url_path
+      title
+    }
+    meta_title
+    meta_keywords
+    meta_description
+  }
+}

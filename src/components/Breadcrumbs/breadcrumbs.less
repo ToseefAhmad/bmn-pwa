@@ -1,0 +1,53 @@
+@import (reference) './../../web/theme.less';
+
+.root {
+  .line-height(25);
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: @indent__l;
+}
+
+.text {
+  &:first-of-type {
+    padding-left: 0;
+  }
+}
+
+span.text {
+  color: @color__gray;
+  font-weight: @font-weight__bold;
+
+  &:last-of-type {
+    padding-right: 0;
+  }
+}
+
+.divider {
+  .iconAfter(arrow-down-grey, 8px, 8px);
+  text-indent: -9999px;
+  padding: 0 8px;
+
+  &:after {
+    content: '';
+    transform: rotate(-90deg);
+    margin-left: 0;
+  }
+}
+
+.link {
+  composes: text;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.currentCategory {
+  composes: text;
+}
+
+@media @mobileM {
+  .root {
+    display: none;
+  }
+}

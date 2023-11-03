@@ -1,0 +1,13 @@
+query headerConfigData {
+  headerConfig {
+    pages {
+      page_id
+      title
+      identifier
+      is_external
+      is_logout
+      show_logged_in
+      show_logged_out
+    }
+  }
+}

@@ -1,0 +1,108 @@
+@import (reference) '../../../web/theme';
+
+.searchResultContainer {
+  input[type="text"] {
+    .font-size(13);
+    width: ~"calc(100% + 40px)";
+  }
+
+  &:hover {
+    input {
+      color: @color__black;
+      border-color: @color__primary;
+    }
+
+    .searchResultContainer__removeIcon {
+      visibility: visible;
+    }
+  }
+
+  [aria-expanded="true"] ~ .searchResultContainer__removeIcon {
+    visibility: visible;
+  }
+}
+
+.searchResultContainer__searchIcon,
+.searchResultContainer__removeIcon {
+  position: relative;
+  top: 50%;
+  right: @indent__s;
+  transform: translateY(-50%);
+  opacity: .4;
+}
+
+.searchResultContainer__searchIcon {
+  .icon('search-black');
+}
+
+.searchResultContainer__removeIcon {
+  .icon('close-black');
+  cursor: pointer;
+  visibility: hidden;
+  right: @indent__base;
+}
+
+a.searchResultContainer__removeIcon {
+  &:hover {
+    opacity: 1;
+  }
+}
+
+a.searchResultContainer__searchIcon {
+  .icon('search-primary');
+  opacity: 1;
+}
+
+.searchResultContainer {
+  display: flex;
+  width: 100%;
+
+  > div {
+    width: 100%;
+  }
+}
+
+/**
+ * Specific Autosuggest component styling
+ * @see https://github.com/moroshko/react-autosuggest#theme-optional
+ */
+.suggestionsContainer {
+  // Comment these lines for debugging purposes.
+  &:not(.suggestionsContainerOpen) {
+    display: none;
+  }
+}
+.suggestionsContainerOpen {
+  .transition(top, 50ms);
+  position: absolute;
+  max-width: @document__max-width - (2 * @document__indent);
+  left: percentage(1/2);
+  transform: translateX(-50%);
+  border: 2px solid @border-color__dark;
+  border-radius: @border-radius__default;
+  background: @searchResult__background-color;
+  z-index: 10;
+
+  > div {
+    max-height: 425px;
+    overflow: auto;
+  }
+}
+
+@media @desktopL {
+  .suggestionsContainerOpen {
+    width: calc(~'100% - (2 * @{indent__base})');
+    top: 131px;
+  }
+
+  body[data-sticky="1"] .suggestionsContainerOpen {
+    top: 60px;
+  }
+}
+
+@media @mobileL {
+  .suggestionsContainerOpen {
+    width: 100%;
+    border-top: 0;
+  }
+}

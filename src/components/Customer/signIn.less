@@ -1,0 +1,170 @@
+@import (reference) '../../web/theme';
+
+.signIn__input,
+.signIn__forgotPassword {
+  display: flex;
+}
+
+.signIn__button {
+  display: inline-block;
+}
+
+.signIn__wrapper {
+  span {
+    display: none;
+
+    &:after {
+      .font-size(@font-size__s);
+      content: '*';
+      color: @color__red;
+      margin: 0 0 0 @indent__xs;
+    }
+  }
+}
+
+.signIn__field {
+  input {
+    border-color: @border-color__dark;
+    background-color: @input__background-color-modal;
+  }
+}
+
+.signIn__container,
+.signIn__form {
+  width: 100%;
+}
+
+.signIn__container {
+  flex-direction: column;
+  margin: @indent__base 0;
+  padding: @indent__base 0 0;
+  border: solid @border-color__dark;
+  border-width: 1px 0;
+}
+
+.signIn__titleDescription,
+.signIn__description,
+.signIn__bottomDescription {
+  display: flex;
+}
+
+.button__notLoggedIn {
+  .iconAfter('user-white', 25px, 25px);
+  justify-content: center;
+  width: 100%;
+}
+
+.loginPage {
+  border: none;
+
+  .signIn__form {
+    flex-direction: column;
+  }
+
+  .signIn__wrapper {
+    width: 100%;
+    margin-right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span,
+    .signIn__field {
+      margin: 0 0 @indent__l;
+    }
+
+    span {
+      display: block;
+      width: percentage(1/4);
+    }
+
+    .signIn__field {
+      width: percentage(3/4);
+    }
+  }
+
+  .signIn__button {
+    margin-left: percentage(1/4);
+  }
+
+  .signIn__forgotPassword {
+    span {
+      &:after {
+        content: '?';
+      }
+    }
+  }
+}
+
+@media @desktopM {
+  .signIn__form,
+  .signIn__container {
+    display: flex;
+  }
+
+  .signIn__wrapper {
+    width: 50%;
+    margin-right: @indent__s;
+  }
+
+  .signIn__forgotPassword {
+    justify-content: flex-end;
+    margin: @indent__sm 0;
+  }
+
+  .loginPage {
+    position: relative;
+
+    .signIn__forgotPassword {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  }
+}
+
+@media @mobileM {
+  .signIn__wrapper {
+    margin-bottom: @indent__s;
+  }
+
+  .signIn__forgotPassword {
+    margin-bottom: @indent__base;
+  }
+
+  .signIn__button {
+    float: right;
+  }
+
+  .loginPage {
+    .signIn__wrapper {
+      flex-direction: column;
+      align-items: flex-start;
+
+      span,
+      .signIn__field {
+        margin: 0;
+        width: 100%;
+      }
+
+      .signIn__field {
+        margin-bottom: @indent__base;
+      }
+    }
+
+    .signIn__button {
+      width: 100%;
+      margin-left: 0;
+      float: none;
+
+      button {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    .signIn__forgotPassword {
+      justify-content: center;
+    }
+  }
+}

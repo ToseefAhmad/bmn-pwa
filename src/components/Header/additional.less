@@ -1,0 +1,111 @@
+@import (reference) '../../web/theme';
+
+.additionalActions,
+.additionalActions__link {
+  display: flex;
+}
+
+.additionalActions__link {
+  align-items: center;
+  position: relative;
+}
+
+.headerIcon {
+  &__link {
+    display: flex;
+    align-items: center
+  }
+
+  &__customer {
+    .transition(transform);
+    .iconBefore('user-primary', 22px, 25px, 0 @indent__xs 0 0);
+    .iconAfter('arrow-down', 10px, 10px, 0 0 0 @indent__xs);
+    border: 2px solid transparent;
+    color: @header__font-color;
+    cursor: pointer;
+
+    > span {
+      pointer-events: none;
+    }
+
+    &Open {
+      border-color: @border-color__default;
+      border-radius: @border-radius__default;
+
+      span {
+        color: @header__additional-active-color;
+      }
+
+      &:after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__cart {
+    .icon('forklift-primary', 40px, 25px)
+  }
+
+  &__cartLoaded {
+    .icon('forklift-primary-loaded', 40px, 25px)
+  }
+}
+
+.additionalActions {
+  &__cartQty {
+    color: @header__cart-qty-color;
+    font-weight: @header__cart-qty-font-weight;
+  }
+}
+
+@media @desktopL {
+  .headerIcon {
+    &__customer {
+      padding: @indent__xs @indent__s;
+      margin-right: @indent__s;
+    }
+  }
+}
+
+@media @mobileXL {
+  .headerIcon {
+    &__customer {
+      &:before,
+      &:after {
+        margin: 0;
+      }
+
+      > span {
+        display: none;
+      }
+    }
+  }
+}
+
+@media @mobileL {
+  .additionalActions {
+    width: @header__additional-width-mobile;
+    justify-content: flex-end;
+    padding: @indent__sm 0;
+    order: 2;
+
+    &__cartQty {
+      padding: 0 @indent__xs;
+      position: absolute;
+      bottom: -6px;
+      right: 4px;
+      background-color: @header__cart-qty-mobile-background-color;
+      box-shadow: @box-shadow__default;
+    }
+  }
+
+  .headerIcon {
+    &__customer {
+      margin-right: @indent__s;
+
+      &:after {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+query getHeadScripts {
+  storeConfig {
+    id
+    headscripts_pwa_general_scripts {
+      script_name
+      script_content
+    }
+  }
+}

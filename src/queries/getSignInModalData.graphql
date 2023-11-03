@@ -1,0 +1,9 @@
+query getSignInModalData {
+  storeConfig {
+    id
+    theme_login_modal_title
+    theme_login_modal_description_title
+    theme_login_modal_description
+    theme_login_modal_bottom_description
+  }
+}

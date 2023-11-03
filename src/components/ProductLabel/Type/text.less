@@ -1,0 +1,32 @@
+@import (reference) '../../../web/theme';
+
+@iterations: 5;
+
+.iteration (@i) when (@i > 0) {
+  &:nth-child(@{i}) {
+    bottom: (@i - 1) * @indent__l
+  }
+  .iteration(@i - 1);
+}
+
+.productLabel {
+  &__text {
+    .font-size(@font-size__xs);
+    .text-ellipsis;
+    position: absolute;
+    right: @indent__xs;
+    max-width: calc(~'100% - @{indent__xs}');
+    padding: 6px @indent__s 4px;
+    text-transform: uppercase;
+    font-weight: @font-weight__bold;
+    color: @color__white;
+    background-color: @color__primary;
+
+    .iteration(@iterations);
+
+    &:nth-of-type(n + 6) {
+      display: none;
+    }
+  }
+}
+

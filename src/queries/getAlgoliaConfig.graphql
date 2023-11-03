@@ -1,0 +1,9 @@
+query algoliaConfigData {
+  algoliaConfig {
+    app_id
+    search_only_api_key
+    product_index_id
+    category_index_id
+    page_index_id
+  }
+}

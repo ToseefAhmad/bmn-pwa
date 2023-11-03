@@ -1,0 +1,45 @@
+@import (reference) '../../../web/theme';
+@table__width: 1000px;
+
+.heading {
+  display: flex;
+  align-items: center;
+  padding: @indent__s @indent__base;
+  background: @color__primary;
+  font-size: @font-size__l;
+  color: @color__white;
+  font-weight: @font-weight__bold;
+
+  span {
+    &:not(:last-of-type) {
+      padding-right: @indent__base;
+    }
+
+    &.product {
+      width: percentage(500/@table__width);
+    }
+
+    &.ppu {
+      width: percentage(165/@table__width);
+    }
+
+    &.price {
+      width: percentage(95/@table__width);
+    }
+
+    &.qty {
+      width: percentage(125/@table__width);
+    }
+
+    &.subtotal {
+      width: percentage(115/@table__width);
+      text-align: right;
+    }
+  }
+}
+
+@media @mobileM {
+  .heading {
+    display: none;
+  }
+}

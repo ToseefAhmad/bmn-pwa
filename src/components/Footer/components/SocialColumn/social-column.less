@@ -1,0 +1,39 @@
+@import (reference) '../../../../web/theme';
+
+.socialColumn {
+  h2 {
+    font-weight: @font-weight__bold;
+  }
+
+  div {
+    margin: @indent__xs;
+  }
+}
+
+.facebook {
+  .icon('facebook-white', 45px, 25px)
+}
+
+.youtube {
+  .icon('youtube-white', 45px, 30px)
+}
+
+.linkedin {
+  .icon('linkedin-white', 45px, 25px)
+}
+
+@media @desktopL {
+  .socialColumn {
+    float: right;
+  }
+}
+
+@media @mobileL {
+  .socialColumn {
+    margin: @indent__xl 0 @indent__base;
+
+    h2 {
+      text-align: center;
+    }
+  }
+}

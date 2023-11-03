@@ -1,0 +1,59 @@
+@import (reference) '../../../../web/theme';
+
+@media @desktopL {
+  .tile {
+    width: percentage(1/4);
+
+    &:not(:last-of-type) {
+      padding: 0 @indent__base 0 0;
+    }
+  }
+}
+
+@media @mobileL {
+  .tile {
+    width: 100%;
+    color: @color__white;
+    overflow: hidden;
+    border-bottom: 1px solid @color__gray-dark;
+
+    h2 {
+      .iconBefore('arrow-down-white', 13px, 13px);
+      .font-size(@font-size__l);
+      display: flex;
+      position: relative;
+      cursor: pointer;
+      margin: 0;
+      padding: 17px @document__indent 13px;
+
+      &:before {
+        margin-bottom: 1px
+      }
+    }
+
+    ul {
+      display: none;
+      padding: 0 @document__indent;
+    }
+
+    &__open {
+      overflow: hidden;
+
+      h2 {
+        &:before {
+          transform: rotate(180deg);
+        }
+      }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: @indent__s;
+      }
+    }
+  }
+
+  .tileBody {
+    max-height: 0;
+  }
+}

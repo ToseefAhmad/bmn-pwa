@@ -1,0 +1,23 @@
+query getCustomer {
+  customer {
+    id
+    email
+    firstname
+    lastname
+    segments {
+      id
+    }
+    company_status
+    freight_cost_applied
+    requisition_lists {
+      __typename
+      items {
+        uid
+        name
+        description
+        items_count
+      }
+      total_count
+    }
+  }
+}

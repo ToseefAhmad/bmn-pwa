@@ -1,0 +1,18 @@
+@import (reference) '../../../web/theme';
+
+.tile {
+  padding: @indent__xs @indent__s;
+  color: @color__primary;
+
+  &__active {
+    padding: @indent__xs @indent__s;
+    background: @color__gray-light;
+    color: @color__black;
+    font-weight: @font-weight__bold;
+    cursor: default;
+  }
+
+  &:not(__active):hover {
+    text-decoration: underline;
+  }
+}

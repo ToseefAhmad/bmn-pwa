@@ -1,0 +1,46 @@
+@import (reference) '../../../web/theme';
+
+.summary {
+  &__title {
+    .font-size(@font-size__l);
+    font-weight: @font-weight__bold;
+    margin-bottom: @indent__s;
+  }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: @indent__s 0;
+
+    span {
+      &:nth-of-type(2) {
+        font-weight: @font-weight__bold;
+      }
+    }
+
+    &.summary__total {
+      padding: (@indent__s + @indent__xs) 0;
+    }
+  }
+
+  &__total {
+    font-weight: @font-weight__bold;
+    border-top: 1px solid @border-color__dark;
+
+    &:last-of-type {
+      margin-bottom: @indent__s;
+    }
+
+    span {
+      &:nth-of-type(2) {
+        color: @color__orange;
+      }
+    }
+  }
+}

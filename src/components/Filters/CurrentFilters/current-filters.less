@@ -1,0 +1,57 @@
+@import (reference) '../../../web/theme';
+
+.header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding-bottom: @indent__s;
+  margin-top: 8px;
+  border-bottom: 1px solid @color__gray-light;
+}
+
+.title {
+  display: block;
+  color: @color__gray;
+  white-space: nowrap;
+  .font-size(@font-size__s);
+}
+
+.cursor {
+  &:hover,
+  &:focus {
+    cursor: pointer;
+  }
+}
+
+.currentFilters {
+  display: flex;
+  flex-wrap: wrap;
+
+  li {
+    cursor: pointer;
+    margin: 5px 0;
+    pointer-events: auto;
+  }
+}
+
+@media @mobileL {
+  .header {
+    flex-wrap: wrap;
+  }
+
+  .title {
+    display: block;
+    width: 100%;
+    margin-top: @indent__s;
+  }
+
+  .currentFilters {
+    margin: @indent__xs 0 0;
+  }
+}
+
+@media @desktopL {
+  .currentFilters {
+    margin: 0 @indent__xs;
+  }
+}

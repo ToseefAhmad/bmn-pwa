@@ -1,0 +1,242 @@
+@import (reference) '../../web/theme';
+
+.button__wrapper {
+  display: flex;
+  position: relative;
+  align-self: center;
+
+  button.tertiary-button {
+    .button(
+      @button-tertiary__background-color,
+      @button-tertiary__background-color--hover,
+      @button-tertiary__color,
+      @button-tertiary__color--hover,
+      @button-tertiary__border,
+      @button-tertiary__border-bottom,
+      @button-tertiary__border-color,
+      @button-tertiary__border-color--hover,
+      @button-tertiary__border-radius,
+      @button-tertiary__box-shadow,
+      @button-tertiary__box-shadow--hover,
+      @button-tertiary__text-decoration,
+      @button-tertiary__text-decoration--hover
+    );
+    display: inline-block;
+    margin: @button__margin;
+    padding: @button__padding;
+    cursor: pointer;
+    user-select: none;
+  }
+}
+
+.icon__wrapper {
+  display: flex;
+  align-items: center;
+
+  &:not(.noStyle) {
+    justify-content: center;
+    height: 48px;
+    width: 48px;
+    align-self: center;
+    background: @color__gray-lighter;
+    border: 1px solid @border-color__gray;
+    border-radius: @border-radius__default;
+  }
+
+  &.right {
+    margin: 0 0 0 @indent__s;
+  }
+
+  &.left {
+    margin: 0 @indent__s 0 0;
+  }
+
+  &:focus,
+  &:hover {
+    outline: none;
+  }
+}
+
+.icon-left {
+  margin-right: @indent__s;
+}
+
+.heart {
+  .iconBefore('heart', @indent__base, @indent__base);
+
+  &::before {
+    margin: 0;
+  }
+}
+
+.list {
+  .iconBefore('list-with-dots', @indent__base, @indent__base);
+
+  &::before {
+    margin: 0;
+  }
+}
+
+.listing {
+  position: absolute;
+  top: 55px;
+  left: 0;
+  background: @color__white;
+  border: 1px solid @color__gray;
+  box-shadow: 0 3px 3px rgba(0,0,0,.15);
+  z-index: 10;
+
+  li {
+    margin: 0;
+    padding: @indent__xs 7px;
+    display: block;
+    width: 100%;
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    &.new {
+      padding-left: calc(1em + 7px);
+      white-space: nowrap;
+      position: relative;
+
+      &::before {
+        left: 7px;
+        content: '+';
+        display: block;
+        position: absolute;
+        font-size: 0.85714286rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  &::before {
+    left: 15px;
+    top: -12px;
+    border: 6px solid;
+    border-color: transparent transparent @color__gray;
+    content: "";
+    display: block;
+    height: 0;
+    position: absolute;
+    width: 0;
+  }
+
+  &.right {
+    right: 0;
+    left: auto;
+
+    &::before {
+      left: auto;
+      right: 15px;
+    }
+  }
+}
+
+.message {
+  background-color: rgb(var(--venia-grey));
+  border-radius: 4px;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  padding: 1rem;
+}
+
+.message:empty {
+  display: none;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.error {
+  composes: message;
+  color: rgb(var(--venia-error));
+}
+
+.hidden {
+  opacity: 0;
+  position: absolute;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.requisitionListBox {
+  width: 230px;
+  max-height: 250px;
+  overflow: auto;
+  word-wrap: break-word;
+
+  button {
+    text-align: left;
+  }
+}
+
+.listItemButton {
+  width: 100%;
+}
+
+@media @mobileM {
+  .actions {
+    flex-direction: column;
+
+    > * {
+      width: 100%;
+      display: inline-block;
+      text-align: center;
+      margin: 0 0 1rem 0;
+    }
+  }
+
+  .button__wrapper {
+    button.tertiary-button {
+      margin-right: 0;
+    }
+  }
+}
+
+.field {
+  margin: 0 0 29px;
+
+  label {
+    margin: 0 0 5px;
+  }
+}
+
+.marginRight {
+  margin-right: @indent__s;
+}
+
+@media @desktopM {
+  .modal {
+    > div {
+      width: 500px;
+      min-width: 500px;
+    }
+  }
+
+  .field {
+    flex-direction: row;
+
+    label {
+      padding: 10px 15px 0 0;
+      text-align: left;
+      width: 25.8%;
+      display: inline-block;
+    }
+
+    .control {
+      width: 74.2%;
+      float: left;
+    }
+  }
+}

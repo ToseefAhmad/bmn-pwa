@@ -1,0 +1,61 @@
+@import (reference) '../../../web/theme';
+
+.cart_cms_block {
+  margin-bottom: @indent__xl;
+
+  div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    > * {
+      width: 100%;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  [class*="mail-button"] {
+    margin-right: @indent__s;
+  }
+
+  [class*="mail-button"],
+  [class*="telephone-button"] {
+    display: flex;
+    justify-content: center;
+    padding: @indent__s @indent__sm;
+    background: @color__white;
+    color: @color__black;
+    border-radius: @button-primary__border-radius;
+    box-shadow: none;
+    width: calc(~'50% - @{indent__s}');
+    max-width: 200px;
+    margin-top: @indent__s;
+    border: 1px solid transparent;
+
+    span {
+      margin: 0
+    }
+
+    &:hover {
+      border: 1px solid @color__primary
+    }
+  }
+}
+
+@media @mobileXS {
+  .cart_cms_block {
+    [class*="mail-button"],
+    [class*="telephone-button"] {
+      width: 100%;
+      max-width: 100%;
+      margin: 0
+    }
+
+    [class*="mail-button"] {
+      margin: @indent__s 0
+    }
+  }
+}

@@ -1,0 +1,45 @@
+query productDetail($urlKey: String) {
+  productDetail: products(filter: { url_key: { eq: $urlKey } }) {
+    crh_data {
+      base {
+        mainProductSku
+        actionName
+        multiSku
+        skuData {
+          product_id
+          sku
+          aofak
+          qty
+          htmlType
+          baseHtml
+          complexPrice
+        }
+        worksiteId
+      }
+      complex {
+        mainProductSku
+        actionName
+        multiSku
+        skuData {
+          product_id
+          sku
+          aofak
+          qty
+          htmlType
+          baseHtml
+          complexPrice
+        }
+        worksiteId
+      }
+      direct {
+        main_product_sku
+        sku
+      }
+      tier {
+        main_product_sku
+        qty
+        sku
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+query megaMenuJson {
+  megaMenuJson {
+    menu {
+      title
+      children {
+        title
+        image_url
+        url
+        type
+        hybrid
+        children {
+          title
+          image_url
+          url
+          type
+          hybrid
+          children  {
+            title
+            image_url
+            url
+            type
+            hybrid
+            children {
+              title
+              image_url
+              url
+              type
+              hybrid
+            }
+          }
+        }
+      }
+    }
+  }
+}

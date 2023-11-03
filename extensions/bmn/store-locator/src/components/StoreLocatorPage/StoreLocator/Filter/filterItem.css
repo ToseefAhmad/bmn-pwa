@@ -1,0 +1,57 @@
+.sl__filterItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 15px 45px 15px;
+  color: #000000;
+  background-color: #ffffff;
+  transition: background-color 200ms linear;
+}
+.sl__filterItemWrapper {
+  position: relative;
+}
+.sl__filterItem:hover {
+  background-color: #f2f0f0;
+}
+.sl__filterItem:hover .sl__filterItemViewLocation {
+  text-decoration: none;
+}
+.sl__filterItem > * {
+  flex: 1;
+}
+.sl__filterItemText {
+  font-size: 10px;
+  display: block;
+}
+.sl__filterItem:not(:last-of-type) {
+  border-bottom: 1px solid #ebebeb;
+}
+.sl__filterItemTitle {
+  font-size: 14px;
+  color: #FF5700;
+  margin-bottom: 5px;
+}
+.sl__filterItemLocationDetails {
+  text-align: right;
+}
+.sl__filterItemDistance {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.sl__filterItemViewLocation {
+  color: #000000;
+}
+.sl__filterItemViewLocation:not(:hover) {
+  text-decoration: underline;
+}
+.sl__filterItemPlanRoute {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  font-size: 12px;
+}
+.sl__filterItemPlanRoute:not(:hover) {
+  text-decoration: underline;
+}

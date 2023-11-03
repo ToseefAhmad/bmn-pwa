@@ -1,0 +1,272 @@
+@transition__property-default: all;
+@transition__speed-default: .2s;
+
+.css(
+  @_property,
+  @_value,
+  @_prefix: 0
+) when (@_prefix = 1)
+  and not (@_value = '')
+  and not (@_value = false)
+  and not (extract(@_value, 1) = false)
+  and not (extract(@_value, 2) = false)
+  and not (extract(@_value, 3) = false)
+  and not (extract(@_value, 4) = false)
+  and not (extract(@_value, 5) = false) {
+  -webkit-@{_property}: @_value;
+  -moz-@{_property}: @_value;
+  -ms-@{_property}: @_value;
+}
+
+.transition(
+  @transitionProperty: @transition__property-default,
+  @transitionSpeed: @transition__speed-default
+) {
+  transition: @transitionSpeed @transitionProperty;
+}
+
+.visuallyHidden() {
+  display: none;
+}
+
+.text-ellipsis() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.button(
+  @button__background-color: @button-primary__background-color,
+  @button__background-color--hover: @button-primary__background-color--hover,
+  @button__color: @button-primary__color,
+  @button__color--hover: @button-primary__color--hover,
+  @button__border: @button-primary__border,
+  @button__border-bottom: @button-primary__border-bottom,
+  @button__border-color: @button-primary__border-color,
+  @button__border-color--hover: @button-primary__border-color--hover,
+  @button__border-radius: @button-primary__border-radius,
+  @button__box-shadow: @button-primary__box-shadow,
+  @button__box-shadow--hover: @button-primary__box-shadow--hover,
+  @button__text-decoration: @button-primary__text-decoration,
+  @button__text-decoration--hover: @button-primary__text-decoration--hover
+) {
+  background-color: @button__background-color;
+  color: @button__color;
+  border: @button__border @button__border-color;
+  border-radius: @button__border-radius;
+  border-bottom: @button__border-bottom;
+  text-decoration: @button__text-decoration;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: @button__background-color--hover;
+    color: @button__color--hover;
+    border-color: @button__border-color--hover;
+    text-decoration: @button__text-decoration--hover;
+  }
+}
+
+.message(
+  @message__color: @message__success-color,
+  @message__background-color: @message__success-background-color,
+  @message__margin: @message__margin,
+  @message__padding: @message__padding
+) {
+  margin: @message__margin;
+  padding: @message__padding;
+  color: @message__color;
+  background-color: @message__background-color;
+}
+
+.textDecorationUnderline() {
+  text-decoration: underline;
+}
+
+.overlay {
+  &:before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    animation: fadein 400ms;
+    pointer-events: none;
+  }
+}
+
+.lib-arrow-default(
+  @arrow-size,
+  @arrow-color
+) {
+  content: '';
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: @arrow-size;
+  height: @arrow-size;
+  border-color: @arrow-color;
+  border-style: solid;
+  transform: rotate(45deg) translateY(-50%);
+}
+
+.lib-triangle(
+  @direction: 'up',
+  @size: 10px,
+  @color: @color__primary
+) {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+
+  & when (@direction = 'up') {
+    border-left: @size solid transparent;
+    border-right: @size solid transparent;
+    border-bottom: @size solid @color;
+  }
+
+  & when (@direction = 'down') {
+    border-left: @size solid transparent;
+    border-right: @size solid transparent;
+    border-top: @size solid @color;
+  }
+
+  & when (@direction = 'right') {
+    border-top: @size solid transparent;
+    border-bottom: @size solid transparent;
+    border-left: @size solid @color;
+  }
+
+  & when (@direction = 'left') {
+    border-top: @size solid transparent;
+    border-bottom: @size solid transparent;
+    border-right: @size solid @color;
+  }
+}
+
+.lib-arrow(
+  @arrow-position: 'after',
+  @arrow-direction: 'right',
+  @arrow-size: 8px,
+  @arrow-color: @color__primary
+) {
+  position: relative;
+
+  & when (@arrow-position = 'before') {
+    padding-left: 2.5 * @arrow-size;
+
+    &:before {
+      .lib-arrow-default(
+              @arrow-size,
+              @arrow-color
+      );
+    }
+  }
+
+  & when (@arrow-position = 'after') {
+    padding-right: 2.5 * @arrow-size;
+
+    &:after {
+      .lib-arrow-default(
+              @arrow-size,
+              @arrow-color
+      );
+    }
+  }
+
+  & when (@arrow-direction = 'right') {
+    &:before,
+    &:after {
+      border-width: 2px 2px 0 0;
+      top: calc(~'50% - 2px');
+    }
+
+    &:before {
+      left: -9px;
+    }
+
+    &:after {
+      right: 7px;
+    }
+  }
+
+  & when (@arrow-direction = 'down') {
+    &:before,
+    &:after {
+      border-width: 2px 2px 0 0;
+      top: calc(~'50% - 2px');
+    }
+
+    &:before {
+      left: -9px;
+    }
+
+    &:after {
+      right: 6px;
+    }
+  }
+
+  & when (@arrow-direction = 'left') {
+    &:before,
+    &:after {
+      border-width: 0 0 2px 2px;
+      top: calc(~'50% - 3px');
+    }
+
+    &:before {
+      left: -2px;
+    }
+
+    &:after {
+      right: 0;
+    }
+  }
+
+  & when (@arrow-direction = 'up') {
+    &:before,
+    &:after {
+      border-width: 2px 0 0 2px;
+      top: calc(~'50% + 2px');
+    }
+
+    &:before {
+      left: -2px;
+    }
+
+    &:after {
+      right: 6px;
+    }
+  }
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.gridContainer(
+  @width: 100%
+) {
+  display: flex;
+  flex-wrap: wrap;
+  width: @width;
+}
+
+.grid(
+  @columnQty,
+  @indent
+) {
+  @p: percentage(1 / @columnQty);
+
+  > * {
+    width: ~"calc(@{p} - @{indent})";
+
+    &:not(:nth-of-type(@{columnQty}n)) {
+      margin-right: ~"calc((@{indent} * @{columnQty}) / (@{columnQty} - 1))";
+    }
+  }
+}

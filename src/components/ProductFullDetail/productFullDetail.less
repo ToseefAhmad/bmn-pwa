@@ -1,0 +1,180 @@
+@import (reference) '../../web/theme';
+
+.thumbs {}
+
+.container {
+  &__flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &:not(&__flex) {
+    section {
+      float: left;
+    }
+  }
+
+  &__100 {
+    width: 100%;
+  }
+
+  section {
+    margin-bottom: @indent__xl;
+  }
+
+  .media_gallery {
+    position: relative;
+  }
+
+  .short_description {
+    margin: @indent__base 0 0 0;
+  }
+
+  .description {
+    clear: both;
+  }
+
+  .ask_via_store {
+    margin-top: @indent__base;
+  }
+
+  .center {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+  }
+
+  .qtyUnit {
+    display: flex;
+    width: 100%;
+    margin-left: @indent__sm;
+    align-items: center;
+
+    span.qty {
+      color: @color__gray;
+      margin-right: @indent__sm;
+    }
+  }
+
+  &__bg_gray {
+    padding: @indent__base;
+    background: @background-color__gray;
+  }
+
+  .stockNotice {
+    margin: @indent__sm 0 0;
+  }
+}
+
+.pdp {
+  &__h1 {
+    color: @color__orange;
+    margin: 0;
+  }
+
+  &__h2 {
+    .font-size(@font-size__l);
+    margin: 0 0 @indent__s;
+  }
+}
+
+.title {
+  &__attributes {
+    color: @color__gray;
+
+    dl {
+      display: flex;
+      flex-wrap: wrap;
+
+      dt {
+        margin-right: @indent__xs;
+
+        &:after {
+          content: ':'
+        }
+      }
+
+      dd:not(:last-of-type) {
+        margin-right: @indent__s;
+
+        &:after {
+          content: '|';
+          margin-left: @indent__s;
+        }
+      }
+    }
+  }
+}
+
+.requisition__list--detail,
+.requisition__list--detail:before {
+  left: auto;
+}
+
+.requisition__list--detail {
+  right: 0;
+
+  &:before {
+    right: 18px;
+  }
+}
+
+@media @mobileL {
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+
+    section {
+      width: 100%;
+    }
+
+    &__50 {
+      width: 100%;
+    }
+
+    .title {
+      order: 1;
+    }
+
+    .media_gallery {
+      order: 2;
+    }
+
+    .product_info {
+      order: 3;
+    }
+
+    .description {
+      order: 4;
+    }
+  }
+}
+
+@media @desktopL {
+  .container {
+    &__50 {
+      width: calc(percentage(1/2) ~'- (@{indent__xl} / 2)');
+    }
+
+    .media_gallery {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      min-height: 340px;
+    }
+
+    .description {
+      padding-bottom: @indent__l;
+      border-bottom: @default__border;
+    }
+
+    .title,
+    .product_info {
+      margin-left: @indent__xl;
+    }
+  }
+}
+
+

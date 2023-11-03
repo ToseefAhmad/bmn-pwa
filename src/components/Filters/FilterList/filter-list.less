@@ -1,0 +1,46 @@
+@import (reference) '../../../web/theme';
+
+.filterWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    max-height: 150px;
+    overflow: hidden;
+    padding-bottom: @indent__s;
+
+    &.open {
+      max-height: 100%;
+
+      ~ .triggerOpen {
+        display: none;
+      }
+
+      ~ .triggerClose {
+        display: block;
+
+        &:after {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    ~ .triggerClose {
+      display: none;
+    }
+  }
+
+  .triggerOpen,
+  .triggerClose {
+    .iconAfter(arrow-down-black, @indent__s, @indent__s);
+    margin: @indent__s 0;
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+    }
+  }
+}

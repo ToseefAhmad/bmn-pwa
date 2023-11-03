@@ -1,0 +1,108 @@
+query productSearch(
+    $currentPage: Int = 1
+    $inputText: String!
+    $pageSize: Int = 24
+    $filters: ProductAttributeFilterInput!
+    $sort: ProductAttributeSortInput
+) {
+    products(
+        currentPage: $currentPage
+        pageSize: $pageSize
+        search: $inputText
+        filter: $filters
+        sort: $sort
+    ) {
+        crh_data {
+            base {
+                mainProductSku
+                actionName
+                multiSku
+                skuData {
+                    product_id
+                    sku
+                    aofak
+                    qty
+                    htmlType
+                    baseHtml
+                    complexPrice
+                }
+                worksiteId
+            }
+            complex {
+                mainProductSku
+                actionName
+                multiSku
+                skuData {
+                    product_id
+                    sku
+                    aofak
+                    qty
+                    htmlType
+                    baseHtml
+                    complexPrice
+                }
+                worksiteId
+            }
+            direct {
+                main_product_sku
+                sku
+            }
+            tier {
+                main_product_sku
+                qty
+                sku
+            }
+        }
+        items {
+            id
+            inventory_unit {
+                is_complex
+                packaging_unit
+                packaging_amount
+                price_per_unit
+                real_inventory_unit
+                square_meter
+                unit_type
+                is_mandatory_packaging
+                major_packaging_unit
+                major_packaging_amount
+            }
+            name
+            sku
+            small_image {
+                url
+            }
+            url_key
+            price_range {
+              maximum_price {
+                final_price {
+                  currency
+                  value
+                }
+              }
+            }
+            stock_notice {
+              color
+              text
+            }
+            saleable_segment {
+              segment_ids
+              message
+            }
+            productLabels {
+              status
+              name
+              label_type
+              background_color
+              label_text
+              color
+              image
+              alt_text
+            }
+        }
+        page_info {
+            total_pages
+        }
+        total_count
+    }
+}

@@ -1,0 +1,36 @@
+@import (reference) '../../../web/theme';
+
+.sl__overview {
+  width: 100%;
+  margin-top: @indent__xl + @indent__xs;
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      padding: 0;
+      margin-bottom: 2px;
+    }
+  }
+
+  a:not(:hover) {
+    text-decoration: none;
+  }
+}
+
+@media @mobileM {
+  .sl__overview {
+    [class^="column-root"] {
+      flex-basis: auto;
+    }
+  }
+}
+
+@media @mobileS {
+  .sl__overview {
+    [class^="column-root"] {
+      width: 50% !important;
+    }
+  }
+}

@@ -1,0 +1,108 @@
+@value info: rgb(0, 104, 108);
+@value warning: rgb(var(--venia-global-color-orange));
+@value error: rgb(220, 20, 60);
+@value success: rgb(0, 100, 0);
+
+.root {
+  width: calc(100% - 2rem);
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 1px 15px rgba(0, 0, 0, 0.5);
+  display: grid;
+  gap: 0.5rem 0.75rem;
+  grid-template-areas: 'icon message controls';
+  grid-auto-columns: min-content auto min-content;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.icon {
+  display: flex;
+  grid-area: icon;
+}
+
+.errorToast {
+  composes: root;
+  border-bottom: 4px solid error;
+}
+
+.errorToast > .icon {
+  color: error;
+}
+
+.infoToast {
+  composes: root;
+  border-bottom: 4px solid info;
+}
+
+.infoToast > .icon {
+  color: info;
+}
+
+.successToast {
+  composes: root;
+  background: success;
+  color: white;
+}
+
+.successToast > .icon {
+  color: white;
+}
+
+.successToast .actionButton,
+.successToast .dismissButton {
+    color: white;
+}
+
+.warningToast {
+  composes: root;
+  border-bottom: 4px solid warning;
+}
+
+.warningToast > .icon {
+  color: warning;
+}
+
+.message {
+  grid-area: message;
+  display: flex;
+  font-family: var(--venia-global-fontFamily-sansSerif);
+  font-size: 1.2rem;
+
+  /* For wrapping...*/
+  /* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+}
+
+.actions {
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
+}
+
+.controls {
+  grid-area: controls;
+  border-left: 1px solid rgb(224, 224, 224);
+  padding-left: 0.75rem;
+}
+
+.actionButton {
+  font-weight: 600;
+  text-decoration: underline;
+  color: rgb(33, 33, 33);
+}
+
+.dismissButton {
+  color: rgb(112, 112, 112);
+}
+
+.dismissButton svg {
+  width: 14px;
+  height: 14px;
+}

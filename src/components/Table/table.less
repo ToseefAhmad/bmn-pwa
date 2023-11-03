@@ -1,0 +1,27 @@
+@import (reference) '../../web/theme';
+
+.table {
+  display: flex;
+  flex-wrap: wrap;
+
+  dt,
+  dd {
+    display: flex;
+    align-items: center;
+    width: percentage(1/2);
+    padding: 7px (@indent__s + @indent__xs);
+    word-break: break-word;
+
+    &:nth-of-type(odd) {
+      background-color: @background-color__gray;
+    }
+
+    &:nth-of-type(even) {
+      background-color: @background-color__gray-light;
+    }
+  }
+
+  dt {
+    color: @color__gray;
+  }
+}

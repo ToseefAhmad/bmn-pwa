@@ -1,0 +1,65 @@
+@import './theme';
+@import './_animations';
+
+@media @mobileL {
+  body {
+    margin: 0;
+  }
+
+  :global {
+    .desktop__l {
+      display: none !important;
+    }
+  }
+}
+
+@media @desktopL {
+  :global {
+    .mobile__l {
+      display: none !important;
+    }
+  }
+}
+
+//
+// Global icon classes
+// -------------------------------------------------
+//
+[class*="icon-euro-sign"] {
+  .iconBefore('euro-sign', 15px, 15px);
+}
+
+[class*="icon-pallet"] {
+  .iconBefore('pallet', 15px, 15px);
+}
+
+[class*="icon-comments"] {
+  .iconBefore('comments', 15px, 15px);
+}
+
+[class*="icon-mail"] {
+  .iconBefore('icon-info-black', 15px, 15px);
+}
+
+[class*="icon-telephone"] {
+  margin-left: 10px;
+  .iconBefore('phone-alt', 15px, 15px);
+}
+
+//
+// Global loading class
+// -------------------------------------------------
+//
+.loading {
+  animation: loading 1.5s infinite;
+}
+
+//
+// Global list class
+// -------------------------------------------------
+//
+ul[class^="list-style-none"] {
+  list-style: none;
+  padding: 0;
+  margin: 0
+}

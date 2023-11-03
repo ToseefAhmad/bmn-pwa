@@ -1,0 +1,82 @@
+@import (reference) '../../web/theme';
+
+.heading {
+  line-height: 1.25em;
+
+  &_container {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 1.2rem;
+  }
+}
+
+.cart {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+.summary {
+  &__container {
+    align-self: flex-start;
+
+    a {
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+
+    &--loading {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+  }
+
+  &__contents {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: @indent__s;
+    padding: @indent__base @indent__base (@indent__xl + @indent__xs);
+    background-color: @color__gray-light;
+  }
+
+  &__shipping {
+    .iconBefore('calendar-primary');
+    padding: 0 @indent__base;
+  }
+}
+
+@media @desktopXL {
+  .items_container {
+    width: percentage(1005/(@document__max-width - (2 * @document__indent)));
+
+    [data-indicator] {
+      height: 310px
+    }
+  }
+
+  .summary__container {
+    width: percentage(345/(@document__max-width - (2 * @document__indent)));
+  }
+}
+
+@media @mobileXL {
+  .summary {
+    &__container {
+      order: 0;
+      width: 100%;
+      margin-bottom: @indent__base;
+    }
+
+    &__shipping {
+      display: none;
+    }
+  }
+
+  .items_container {
+    order: 1;
+  }
+}

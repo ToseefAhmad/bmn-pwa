@@ -1,0 +1,6 @@
+query getCartDeliveryText {
+  storeConfig {
+    id
+    cart_pwa_choose_delivery_text
+  }
+}

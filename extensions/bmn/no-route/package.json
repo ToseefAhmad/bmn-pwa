@@ -1,0 +1,23 @@
+{
+  "name": "@bmn/no-route",
+  "version": "1.0.0",
+  "description": "BMN No Route",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "intercept.js",
+  "license": "MIT",
+  "peerDependencies": {
+    "@apollo/client": "^3.5.6",
+    "@magento/peregrine": "~12.0.0",
+    "@magento/pwa-buildpack": "^11.0.0",
+    "@magento/venia-ui": "^9.1.0",
+    "graphql-tag": "^2.12.6",
+    "react": "^17.0.1"
+  },
+  "pwa-studio": {
+    "targets": {
+      "intercept": "./intercept"
+    }
+  }
+}

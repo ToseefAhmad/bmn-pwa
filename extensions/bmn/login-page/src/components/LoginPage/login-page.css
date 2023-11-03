@@ -1,0 +1,85 @@
+.loginContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.customerLogin {
+  width: calc(50% - 20px);
+  margin-bottom: 40px;
+}
+
+.newCustomerWrapper {
+  display: flex;
+  flex-direction: column;
+  width: calc(50% - 20px);
+}
+
+.newCustomer,
+.newCompany {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.blockTitle {
+  border-bottom: 1px solid #838282;
+  font-size: 18px;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+.blockTitle span {
+  font-size: 22px;
+  line-height: 24px;
+  font-weight: 700;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+.signIn__button {
+  display: inline-block;
+}
+
+.blockRequired {
+  margin-left: 25%;
+}
+
+.blockRequired span {
+  color: #e84b3d;
+}
+
+@media only screen and (max-width: 1023px ) {
+  .loginContainer {
+    flex-direction: column;
+  }
+
+  .customerLogin,
+  .newCustomerWrapper {
+    width: 100%;
+  }
+
+  .newCustomerWrapper {
+    float: none;
+    margin-bottom: 30px;
+  }
+
+  .newCustomer,
+  .newCompany {
+    float: none;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .signIn__button {
+    width: 100%;
+  }
+
+  .signIn__button a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .blockRequired {
+    margin-left: 0;
+    text-align: center;
+  }
+}

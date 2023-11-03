@@ -1,0 +1,39 @@
+@import (reference) '../../../web/theme';
+
+@media @desktopL {
+  .panelHeaderLinks {
+    display: flex;
+
+    a,
+    span {
+      color: @header__font-color;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: @font-style__underline;
+      }
+    }
+  }
+}
+
+@media @desktopXL {
+  .panelHeaderLinks {
+    li {
+      &:not(:last-of-type) {
+        margin-right: @indent__base;
+      }
+    }
+  }
+}
+
+@media @tabletL-XL {
+  .panelHeaderLinks {
+    font-size: @font-size__s + 1;
+
+    li {
+      &:not(:last-of-type) {
+        margin-right: @indent__s + @indent__xs;
+      }
+    }
+  }
+}

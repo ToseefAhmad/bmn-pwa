@@ -1,0 +1,17 @@
+mutation updateRequisitionList($uid: ID!, $input: RequisitionListInput!) {
+  updateRequisitionList(uid: $uid, input: $input) {
+    requisition_list {
+      uid
+      name
+      description
+      items {
+        uid
+        name
+        description
+        items_count
+      }
+      items_count
+      updated_at
+    }
+  }
+}

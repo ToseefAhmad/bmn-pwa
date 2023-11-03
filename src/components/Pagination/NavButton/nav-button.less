@@ -1,0 +1,30 @@
+@import (reference) '../../../web/theme';
+
+.navButton {
+  margin: @indent__s;
+  color: @color__primary;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.prev {
+  .iconBefore('arrow-down-primary', @indent__s, @indent__s);
+  margin: @indent__xs @indent__xs @indent__xs 0;
+
+  &:before {
+    transform: rotate(90deg);
+    margin: @indent__xs @indent__xs @indent__xs 0;
+  }
+}
+
+.next {
+  .iconAfter('arrow-down-primary', @indent__s, @indent__s);
+  margin: @indent__xs 0 @indent__xs @indent__xs;
+
+  &:after {
+    transform: rotate(270deg);
+    margin: @indent__xs 0 @indent__xs @indent__xs;
+  }
+}

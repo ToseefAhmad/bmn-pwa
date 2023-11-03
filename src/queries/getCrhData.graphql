@@ -1,0 +1,47 @@
+query getCrhData($skus: [String]!) {
+  crhData: products(filter: { sku: { in: $skus } }) {
+    __typename
+    crh_data {
+      __typename
+      base {
+        mainProductSku
+        actionName
+        multiSku
+        skuData {
+          product_id
+          sku
+          aofak
+          qty
+          htmlType
+          baseHtml
+          complexPrice
+        }
+        worksiteId
+      }
+      complex {
+        mainProductSku
+        actionName
+        multiSku
+        skuData {
+          product_id
+          sku
+          aofak
+          qty
+          htmlType
+          baseHtml
+          complexPrice
+        }
+        worksiteId
+      }
+      direct {
+        main_product_sku
+        sku
+      }
+      tier {
+        main_product_sku
+        qty
+        sku
+      }
+    }
+  }
+}

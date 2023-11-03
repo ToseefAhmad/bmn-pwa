@@ -1,0 +1,55 @@
+@import (reference) '../../../web/theme';
+
+.cart {
+  &__actions {
+    display: flex;
+    width: 100%;
+    margin-bottom: @indent__xl;
+  }
+}
+
+.button {
+  &__removeAll {
+    .iconBefore('trash', 15px, 15px, 0px @indent__s 0 0);
+    padding: @indent__s;
+    color: @color__gray;
+
+    &:hover {
+      color: @color__gray;
+    }
+  }
+}
+
+@media @desktopM {
+  .cart {
+    &__actions {
+      justify-content: flex-end;
+
+      > * {
+        &:not(:last-child) {
+          margin-right: @indent__sm;
+        }
+      }
+    }
+  }
+}
+
+@media @mobileM {
+  .cart {
+    &__actions {
+      flex-direction: column-reverse;
+
+      > *:not(:first-child) {
+        margin: 0 0 @indent__s 0;
+      }
+
+      a[class*="button"],
+      button {
+        width: 100%;
+        justify-content: center;
+        align-self: center;
+      }
+    }
+  }
+}
+

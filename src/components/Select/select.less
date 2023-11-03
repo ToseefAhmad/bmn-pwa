@@ -1,0 +1,67 @@
+@import (reference) '../../web/theme';
+
+.select {
+  position: relative;
+
+  > div {
+    &:nth-child(1) {
+      position: relative;
+      background-color: @color__white;
+      border: 1px solid @border-color__dark;
+      border-radius: 3px;
+      cursor: pointer;
+      padding: @indent__s 40px @indent__s @indent__s;
+      overflow: hidden;
+    }
+
+    &:nth-child(2) {
+      position: absolute;
+      top: 100%;
+      background: @color__white;
+      border: 1px solid @border-color__dark;
+      margin-top: -1px;
+      max-height: 250px;
+      overflow-y: auto;
+      width: 100%;
+      z-index: 1;
+      -webkit-overflow-scrolling: touch;
+
+      [role="option"] {
+        cursor: pointer;
+        display: block;
+        padding: @indent__s;
+
+        &:hover,
+        &[aria-selected="true"]:hover {
+          background-color: @color__primary;
+          color: @color__white;
+        }
+
+        &[aria-selected="true"] {
+          color: @color__primary;
+        }
+      }
+    }
+  }
+
+  &__wrapper {
+    [class*="is-open"] {
+      [class*="Dropdown-arrow"]:after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__placeholder {
+    .text-ellipsis;
+    color: @color__primary;
+  }
+
+  &__arrow {
+    .iconAfter(arrow-down-black, 12px, 12px);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+  }
+}

@@ -1,0 +1,63 @@
+@import (reference) '../../web/theme';
+
+.hexagon {
+  float: left;
+  display: block;
+  position: relative;
+  width: 45px;
+  height: 30px;
+  margin: 0;
+  margin-right: 10px;
+  background-color: @color__primary;
+
+  &:hover {
+    background-color: @color__orange-light;
+    border-bottom-color: @color__orange-light;
+
+    &:before {
+      border-bottom-color: @color__orange-light;
+    }
+
+    &:after {
+      border-top-color: @color__orange-light;
+    }
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    border-left: 22.5px solid transparent;
+    border-right: 22.5px solid transparent;
+  }
+
+  &:before {
+    bottom: 100%;
+    border-bottom: 10px solid @color__primary;
+  }
+
+  &:after {
+    top: 30px;
+    width: 0;
+    left: 0;
+    border-top: 10px solid @color__primary;
+  }
+}
+
+.social-icons {
+  float: left;
+
+  a {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 2px;
+    background-size: contain;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+query getCustomerLinks {
+  storeConfig {
+    id
+    theme_header_customer_links {
+      title
+      subtitle
+      url
+    }
+  }
+}

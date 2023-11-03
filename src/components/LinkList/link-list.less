@@ -1,0 +1,42 @@
+@import (reference) '../../web/theme';
+@import '../../web/mixins';
+
+.List {
+  list-style-type: none;
+}
+
+.Link {
+  width: 100%;
+  float: left;
+  margin-bottom: 5px;
+  color: @color__black;
+  display: block;
+  padding: 0;
+
+  &__gray {
+    .line-height(20);
+    .transition();
+    margin: @indent__xs 0;
+    color: @color__gray;
+    font-weight: 600;
+    transition-timing-function: ease-in;
+
+    &:hover {
+      color: @color__primary;
+    }
+  }
+
+  &__horizontal {
+    float: left;
+    display: inline;
+    width: auto;
+    color: @color__gray;
+    margin: 0;
+    padding: 1.5rem 0.5rem;
+    .transition();
+
+    &:hover {
+      color: @color__primary;
+    }
+  }
+}

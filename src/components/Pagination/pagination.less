@@ -1,0 +1,19 @@
+@import (reference) '../../web/theme';
+
+.paginationWrapper {
+  width: 100%;
+  display: flex;
+  margin-top: @indent__base;
+}
+
+@media @desktopM {
+  .paginationWrapper {
+    justify-content: flex-end;
+  }
+}
+
+@media @mobileM {
+  .paginationWrapper {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,7 @@
+query getFreightCostConfig {
+    storeConfig {
+        id
+        checkout_freight_cost_freight_threshold
+        checkout_freight_cost_freight_notice
+      }
+}

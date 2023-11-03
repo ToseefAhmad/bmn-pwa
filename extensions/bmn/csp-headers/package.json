@@ -1,0 +1,24 @@
+{
+  "name": "@bmn/csp-headers",
+  "version": "0.0.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Add security headers",
+  "main": "src/intercept-target.js",
+  "scripts": {
+    "clean": " "
+  },
+  "author": "Guapa",
+  "license": "(OSL-3.0 OR AFL-3.0)",
+  "peerDependencies": {
+    "@magento/pwa-buildpack": "~10.0.0",
+    "@magento/venia-ui": "~8.0.0",
+    "webpack": "~4.46.0"
+  },
+  "pwa-studio": {
+    "targets": {
+      "intercept": "./src/intercept-target.js"
+    }
+  }
+}

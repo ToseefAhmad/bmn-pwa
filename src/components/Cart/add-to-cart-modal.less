@@ -1,0 +1,60 @@
+@import (reference) '../../web/theme';
+
+.itemRow {
+  display: flex;
+  width: 100%;
+}
+
+.itemImage {
+  width: 150px;
+}
+
+.relatedProductsTitle {
+  width: 100%;
+}
+
+.relatedProducts {
+  padding-top: @indent__base;
+  margin-top: @indent__base;
+  border-top: @default__border;
+
+  > div {
+    padding-top: @indent__l
+  }
+}
+
+.itemInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 0 0 @indent__base;
+  color: @color__black;
+
+  > span {
+    &:not(:first-of-type) {
+      margin-top: @indent__xs
+    }
+  }
+
+  strong {
+    display: inline-block;
+    width: 55px;
+    margin-right: @indent__s
+  }
+}
+
+@media @mobileL {
+  .relatedProducts {
+    padding-top: 0;
+
+    > div {
+      padding-top: 0;
+    }
+  }
+}
+
+@media @mobileM {
+  .relatedProductsTitle {
+    padding-right: @indent__m;
+  }
+}
